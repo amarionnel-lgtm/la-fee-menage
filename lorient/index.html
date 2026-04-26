@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nettoyage Lorient — La Fée Ménage | Entreprise de nettoyage Lorient 56</title>
+  <meta name="description" content="Nettoyage professionnel à Lorient et agglomération (Lanester, Hennebont, Ploemeur). La Fée Ménage : bureaux, déménagement, fin de chantier, vitres, syndrome de Diogène. Devis gratuit.">
+  <link rel="canonical" href="https://lafeemenage.fr/lorient/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="icon" href="/assets/images/logo/logo-la-fee-menage.png" type="image/png">
+  <style>
+    .city-hero {
+      background: linear-gradient(135deg, var(--c-surface-rose) 0%, var(--c-surface) 100%);
+      padding: var(--space-16) 0 var(--space-12);
+    }
+    .city-hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: var(--space-10);
+      align-items: start;
+    }
+    .city-hero h1 { margin-bottom: var(--space-4); }
+    .city-intro {
+      font-size: 1.0625rem;
+      color: var(--c-text-muted);
+      line-height: 1.75;
+      margin-bottom: var(--space-6);
+    }
+    .city-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+    .city-tel { margin-top: var(--space-3); font-size: 0.9375rem; color: var(--c-text-muted); }
+    .city-tel a { color: var(--c-green); font-weight: 600; }
+    .city-aside-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+      box-shadow: var(--shadow-md);
+      border-top: 4px solid var(--c-rose);
+    }
+    .city-aside-card h2 {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--c-text-muted);
+      margin-bottom: var(--space-4);
+    }
+    .city-aside-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: var(--space-2); }
+    .city-aside-list li { display: flex; align-items: center; gap: var(--space-2); font-size: 0.9375rem; }
+    .city-aside-list li::before { content: "✓"; color: var(--c-green); font-weight: 700; flex-shrink: 0; }
+
+    .city-services { padding: var(--space-16) 0; }
+    .city-services h2 { margin-bottom: var(--space-2); }
+    .city-services-intro { color: var(--c-text-muted); margin-bottom: var(--space-8); }
+    .city-services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-4);
+    }
+    .city-service-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--c-border);
+      text-decoration: none;
+      color: inherit;
+      transition: box-shadow var(--transition-base), transform var(--transition-base);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+    .city-service-card:hover, .city-service-card:focus-visible {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+      color: inherit;
+    }
+    .city-service-icon { font-size: 1.75rem; }
+    .city-service-card h3 { font-family: var(--font-sans); font-size: 1rem; font-weight: 600; margin: 0; color: var(--c-green-dark); }
+    .city-service-card p { font-size: 0.875rem; color: var(--c-text-muted); margin: 0; line-height: 1.5; }
+    .city-service-arrow { margin-top: auto; font-size: 0.8125rem; color: var(--c-green); font-weight: 600; }
+
+    .city-why { background: var(--c-surface); padding: var(--space-16) 0; }
+    .city-why h2 { margin-bottom: var(--space-8); }
+    .city-why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); }
+    .city-why-item { display: flex; flex-direction: column; gap: var(--space-3); }
+    .city-why-icon { font-size: 2rem; }
+    .city-why-item h3 { font-family: var(--font-sans); font-size: 1rem; font-weight: 600; color: var(--c-green-dark); margin: 0; }
+    .city-why-item p { font-size: 0.9375rem; color: var(--c-text-muted); margin: 0; line-height: 1.6; }
+
+    .city-faq { padding: var(--space-16) 0; }
+    .city-faq h2 { margin-bottom: var(--space-8); }
+
+    @media (max-width: 768px) {
+      .city-hero-inner { grid-template-columns: 1fr; }
+      .city-services-grid { grid-template-columns: 1fr 1fr; }
+      .city-why-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .city-services-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "CleaningService"],
+    "name": "La Fée Ménage — Nettoyage Lorient",
+    "description": "Entreprise de nettoyage professionnel à Lorient et agglomération (Lanester, Hennebont, Ploemeur, Guidel). Particuliers et professionnels. Devis gratuit sous 24h.",
+    "taxID": "98270465200022",
+    "telephone": "+33641843634",
+    "email": "lafeemenage@gmail.com",
+    "url": "https://lafeemenage.fr/lorient/",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "38 Kerlay",
+      "addressLocality": "Melrand",
+      "postalCode": "56310",
+      "addressCountry": "FR"
+    },
+    "serviceArea": {
+      "@type": "City",
+      "name": "Lorient",
+      "containedInPlace": {
+        "@type": "AdministrativeArea",
+        "name": "Morbihan"
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "10",
+      "bestRating": "5"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://lafeemenage.fr/" },
+      { "@type": "ListItem", "position": 2, "name": "Lorient", "item": "https://lafeemenage.fr/lorient/" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Aller au contenu principal</a>
+  <div data-component="header" style="min-height:72px"></div>
+  <div data-component="trust-bar" style="min-height:40px"></div>
+
+  <nav class="breadcrumb" aria-label="Fil d'Ariane">
+    <div class="container">
+      <ol>
+        <li><a href="/">Accueil</a></li>
+        <li aria-current="page">Nettoyage Lorient</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <section class="city-hero">
+      <div class="container">
+        <div class="city-hero-inner">
+          <div>
+            <h1>Nettoyage Lorient<br><em>La Fée Ménage</em></h1>
+            <p class="city-intro">
+              Florence Marionnel intervient à Lorient et dans toute l'agglomération — Lanester, Hennebont, Ploemeur, Guidel, Larmor-Plage — pour tous vos besoins de nettoyage professionnel. Particulier ou entreprise, chantier ou déménagement, elle adapte son intervention à votre situation avec soin et discrétion.
+            </p>
+            <p class="city-intro">
+              Lorient est une ville qui se réinvente depuis sa reconstruction d'après-guerre. Entre appartements haussmanniens réhabilités, immeubles récents de la rive droite et bureaux du quartier de la Base, les besoins en nettoyage sont aussi variés que ses habitants. La Fée Ménage s'est forgé une solide réputation dans la zone — 5 étoiles sur Google, 10 avis, et des clients qui reviennent.
+            </p>
+            <div class="city-actions">
+              <a href="#" data-email="lafeemenage|gmail.com" class="btn btn-primary">Demander un devis gratuit</a>
+              <a href="tel:+33641843634" class="btn btn-secondary">06 41 84 36 34</a>
+            </div>
+            <p class="city-tel">Réponse de Florence sous 24h — devis sans engagement</p>
+          </div>
+          <aside>
+            <div class="city-aside-card">
+              <h2>Interventions à Lorient</h2>
+              <ul class="city-aside-list">
+                <li>Lorient centre-ville</li>
+                <li>Lanester</li>
+                <li>Hennebont</li>
+                <li>Ploemeur</li>
+                <li>Guidel</li>
+                <li>Larmor-Plage</li>
+                <li>Lorient Agglomération</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="city-services">
+      <div class="container">
+        <h2>Nos services à Lorient</h2>
+        <p class="city-services-intro">Du ménage courant au nettoyage extrême, La Fée Ménage couvre tous les types de prestations sur Lorient et son bassin.</p>
+        <div class="city-services-grid">
+          <a href="/services/nettoyage-syndrome-diogene-morbihan/" class="city-service-card">
+            <span class="city-service-icon" aria-hidden="true">🏠</span>
+            <h3>Syndrome de Diogène</h3>
+            <p>Nettoyage extrême, désencombrement, remise en état — avec discrétion et sans jugement.</p>
+            <span class="city-service-arrow">Découvrir →</span>
+          </a>
+          <a href="/services/nettoyage-bureaux-morbihan/" class="city-service-card">
+            <span class="city-service-icon" aria-hidden="true">🏢</span>
+            <h3>Nettoyage de bureaux</h3>
+            <p>Entretien régulier ou ponctuel de locaux professionnels à Lorient et Lanester.</p>
+            <span class="city-service-arrow">Découvrir →</span>
+          </a>
+          <a href="/services/nettoyage-demenagement-morbihan/" class="city-service-card">
+            <span class="city-service-icon" aria-hidden="true">📦</span>
+            <h3>Nettoyage déménagement</h3>
+            <p>État des lieux impeccable, récupération de caution — avant ou après le déménagement.</p>
+            <span class="city-service-arrow">Découvrir →</span>
+          </a>
+          <a href="/services/nettoyage-fin-de-chantier-morbihan/" class="city-service-card">
+            <span class="city-service-icon" aria-hidden="true">🔨</span>
+            <h3>Fin de chantier</h3>
+            <p>Nettoyage après travaux : plâtre, poussière, résines — locaux prêts à l'usage.</p>
+            <span class="city-service-arrow">Découvrir →</span>
+          </a>
+          <a href="/services/nettoyage-vitres-morbihan/" class="city-service-card">
+            <span class="city-service-icon" aria-hidden="true">🪟</span>
+            <h3>Nettoyage de vitres</h3>
+            <p>Vitres, baies vitrées, vérandas — sans traces, résultat professionnel garanti.</p>
+            <span class="city-service-arrow">Découvrir →</span>
+          </a>
+          <a href="/services/nettoyage-terrasse-morbihan/" class="city-service-card">
+            <span class="city-service-icon" aria-hidden="true">🌿</span>
+            <h3>Nettoyage de terrasse</h3>
+            <p>Démoussage, dégraissage, bois, pierre, composite — terrasse prête pour la belle saison.</p>
+            <span class="city-service-arrow">Découvrir →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="city-why">
+      <div class="container">
+        <h2>Pourquoi choisir La Fée Ménage à Lorient ?</h2>
+        <div class="city-why-grid">
+          <div class="city-why-item">
+            <span class="city-why-icon" aria-hidden="true">⭐</span>
+            <h3>5 étoiles · 10 avis Google</h3>
+            <p>Florence a bâti sa réputation sur le bouche-à-oreille et la satisfaction client. Chaque intervention à Lorient est traitée avec le même soin que le premier jour.</p>
+          </div>
+          <div class="city-why-item">
+            <span class="city-why-icon" aria-hidden="true">🌱</span>
+            <h3>Produits 100% écologiques</h3>
+            <p>Que vous soyez à Lorient ou à Lanester, Florence n'utilise que des produits biodégradables — efficaces, sans odeurs chimiques agressives, respectueux de votre intérieur.</p>
+          </div>
+          <div class="city-why-item">
+            <span class="city-why-icon" aria-hidden="true">🤝</span>
+            <h3>Un interlocuteur unique</h3>
+            <p>Pas de sous-traitant, pas d'agence. C'est Florence qui répond au téléphone, Florence qui vient, Florence qui assure le suivi. Simple et rassurant.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="zones-section">
+      <div class="container">
+        <h2>Autres communes desservies</h2>
+        <p>La Fée Ménage intervient dans tout le Morbihan. Retrouvez nos pages dédiées par ville.</p>
+        <div class="zones-grid">
+          <a href="/vannes/" class="zone-link">Vannes</a>
+          <a href="/pontivy/" class="zone-link">Pontivy</a>
+          <a href="/auray/" class="zone-link">Auray</a>
+          <a href="/melrand/" class="zone-link">Melrand</a>
+          <a href="/morbihan/" class="zone-link">Morbihan</a>
+          <a href="/lorient/" class="zone-link" aria-current="page">Lorient</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="city-faq">
+      <div class="container">
+        <h2>Questions fréquentes — Lorient</h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Intervenez-vous à Lanester et dans l'agglomération de Lorient ?</summary>
+            <div class="faq-body">
+              <p>Oui, La Fée Ménage intervient sur toute l'agglomération lorientaise : Lorient, Lanester, Hennebont, Ploemeur, Guidel, Larmor-Plage et communes environnantes. Précisez votre commune lors de la demande de devis.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Proposez-vous des contrats d'entretien régulier pour les entreprises à Lorient ?</summary>
+            <div class="faq-body">
+              <p>Oui. Florence propose des contrats hebdomadaires, bimensuels ou mensuels pour les bureaux, locaux commerciaux et professionnels à Lorient. Le contrat fixe les jours, la durée et les tâches — vous n'avez plus à y penser.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Quel délai pour obtenir un devis à Lorient ?</summary>
+            <div class="faq-body">
+              <p>Florence répond sous 24h à toute demande de devis — souvent le jour même. Envoyez un email à lafeemenage@gmail.com ou appelez le 06 41 84 36 34 en décrivant votre besoin, la surface approximative et votre disponibilité.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Prenez-vous en charge les situations de nettoyage extrême à Lorient ?</summary>
+            <div class="faq-body">
+              <p>Oui. La Fée Ménage est spécialisée dans le nettoyage après syndrome de Diogène, accumulation excessive, logements après décès ou situations de détresse. Ces interventions sont traitées avec une discrétion absolue et sans jugement.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div data-component="cta-devis"></div>
+  <div data-component="footer"></div>
+  <script src="/assets/js/components.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

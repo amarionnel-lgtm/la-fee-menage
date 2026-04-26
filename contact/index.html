@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — La Fée Ménage | Nettoyage Morbihan — Devis gratuit</title>
+  <meta name="description" content="Contactez La Fée Ménage pour un devis gratuit de nettoyage dans le Morbihan. Florence Marionnel répond sous 24h. Tél : 06 41 84 36 34.">
+  <link rel="canonical" href="https://lafeemenage.fr/contact/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="icon" href="/assets/images/logo/logo-la-fee-menage.png" type="image/png">
+  <style>
+    /* Styles spécifiques page contact */
+    .contact-hero {
+      background: var(--c-surface-rose);
+      padding: var(--space-16) 0 var(--space-12);
+      text-align: center;
+    }
+
+    .contact-hero h1 {
+      margin-bottom: var(--space-4);
+    }
+
+    .contact-hero .contact-intro {
+      font-size: 1.125rem;
+      color: var(--c-text-muted);
+      max-width: 560px;
+      margin: 0 auto var(--space-8);
+      line-height: 1.7;
+    }
+
+    .contact-benefits {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      justify-content: center;
+      margin-bottom: var(--space-8);
+    }
+
+    .contact-benefit-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      background: white;
+      border: 1px solid var(--c-rose);
+      border-radius: var(--radius-full);
+      padding: var(--space-2) var(--space-4);
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--c-green-dark);
+    }
+
+    .contact-benefit-badge span[aria-hidden] {
+      font-size: 1rem;
+    }
+
+    .contact-cta-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-3);
+      background: var(--c-green);
+      color: white;
+      text-decoration: none;
+      font-size: 1.125rem;
+      font-weight: 600;
+      padding: var(--space-4) var(--space-8);
+      border-radius: var(--radius-lg);
+      transition: background var(--transition-base);
+    }
+
+    .contact-cta-primary:hover,
+    .contact-cta-primary:focus-visible {
+      background: var(--c-green-dark);
+      color: white;
+    }
+
+    .contact-cta-primary svg {
+      flex-shrink: 0;
+    }
+
+    .contact-infos {
+      padding: var(--space-16) 0;
+    }
+
+    .contact-infos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: var(--space-6);
+    }
+
+    .contact-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: var(--space-8);
+      box-shadow: var(--shadow-md);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-3);
+    }
+
+    .contact-card-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--c-surface-rose);
+      border-radius: var(--radius-base);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    .contact-card-label {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--c-text-muted);
+      margin: 0;
+    }
+
+    .contact-card p, .contact-card a {
+      font-size: 1.0625rem;
+      font-weight: 500;
+      color: var(--c-green-dark);
+      text-decoration: none;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .contact-card a:hover,
+    .contact-card a:focus-visible {
+      color: var(--c-green);
+      text-decoration: underline;
+    }
+
+    .contact-card-tel a {
+      font-size: 1.375rem;
+      font-weight: 700;
+      color: var(--c-green);
+    }
+
+    .contact-card-tel a:hover {
+      color: var(--c-green-dark);
+    }
+
+    .contact-horaires {
+      background: var(--c-surface-dark);
+      color: white;
+      padding: var(--space-12) 0;
+    }
+
+    .contact-horaires .container {
+      max-width: 680px;
+    }
+
+    .contact-horaires h2 {
+      color: white;
+      margin-bottom: var(--space-6);
+      text-align: center;
+    }
+
+    .horaires-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .horaires-table thead th {
+      padding: var(--space-2) var(--space-4);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.5);
+      text-align: left;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .horaires-table thead th:last-child {
+      text-align: right;
+    }
+
+    .horaires-table tr {
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .horaires-table td,
+    .horaires-table tbody th {
+      padding: var(--space-3) var(--space-4);
+      font-size: 0.9375rem;
+    }
+
+    .horaires-table tbody th {
+      color: var(--c-rose);
+      font-weight: 500;
+      text-align: left;
+    }
+
+    .horaires-table td {
+      text-align: right;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .horaires-note {
+      margin-top: var(--space-6);
+      text-align: center;
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .contact-map-section {
+      padding: var(--space-16) 0;
+      background: var(--c-surface);
+    }
+
+    .contact-map-section h2 {
+      margin-bottom: var(--space-4);
+    }
+
+    .contact-map-intro {
+      color: var(--c-text-muted);
+      margin-bottom: var(--space-8);
+    }
+
+    .map-placeholder {
+      background: var(--c-surface-rose);
+      border: 2px dashed var(--c-rose);
+      border-radius: var(--radius-lg);
+      padding: var(--space-12);
+      text-align: center;
+      color: var(--c-text-muted);
+      font-size: 0.9375rem;
+    }
+
+    @media (max-width: 768px) {
+      .contact-benefits {
+        gap: var(--space-2);
+      }
+
+      .contact-cta-primary {
+        font-size: 1rem;
+        padding: var(--space-4) var(--space-6);
+      }
+
+      .horaires-table td {
+        padding: var(--space-2) var(--space-3);
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "La Fée Ménage",
+    "taxID": "98270465200022",
+    "telephone": "+33641843634",
+    "email": "lafeemenage@gmail.com",
+    "url": "https://lafeemenage.fr",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "38 Kerlay",
+      "addressLocality": "Melrand",
+      "postalCode": "56310",
+      "addressCountry": "FR"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "09:00",
+        "closes": "12:00"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "10",
+      "bestRating": "5"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://lafeemenage.fr/" },
+      { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://lafeemenage.fr/contact/" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Aller au contenu principal</a>
+  <div data-component="header" style="min-height:72px"></div>
+  <div data-component="trust-bar" style="min-height:40px"></div>
+
+  <nav class="breadcrumb" aria-label="Fil d'Ariane">
+    <div class="container">
+      <ol>
+        <li><a href="/">Accueil</a></li>
+        <li aria-current="page">Contact</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- Hero CTA -->
+    <section class="contact-hero">
+      <div class="container">
+        <h1>Parlons de votre projet<br><em>de nettoyage</em></h1>
+        <p class="contact-intro">
+          Florence vous répond personnellement sous 24h. Pas de standardiste, pas de formulaire à remplir — juste un échange humain pour comprendre votre besoin et vous proposer un devis adapté.
+        </p>
+
+        <div class="contact-benefits" role="list">
+          <div class="contact-benefit-badge" role="listitem">
+            <span aria-hidden="true">✓</span>
+            <span>Devis gratuit sans engagement</span>
+          </div>
+          <div class="contact-benefit-badge" role="listitem">
+            <span aria-hidden="true">✓</span>
+            <span>Réponse sous 24h</span>
+          </div>
+          <div class="contact-benefit-badge" role="listitem">
+            <span aria-hidden="true">✓</span>
+            <span>Intervention dans tout le Morbihan</span>
+          </div>
+          <div class="contact-benefit-badge" role="listitem">
+            <span aria-hidden="true">✓</span>
+            <span>5 étoiles · 10 avis Google</span>
+          </div>
+        </div>
+
+        <a href="#" data-email="lafeemenage|gmail.com" class="contact-cta-primary" aria-label="Écrire à Florence par email (ouvre votre application email)">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+            <path d="M2 5.5A2.5 2.5 0 0 1 4.5 3h13A2.5 2.5 0 0 1 20 5.5v11A2.5 2.5 0 0 1 17.5 19h-13A2.5 2.5 0 0 1 2 16.5v-11Z" stroke="white" stroke-width="1.5"/>
+            <path d="M2 6l9 6 9-6" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          Écrire à Florence
+        </a>
+
+        <p style="margin-top: var(--space-4); font-size: 0.875rem; color: var(--c-text-muted);">
+          Votre messagerie s'ouvre directement — réponse garantie sous 24h
+        </p>
+      </div>
+    </section>
+
+    <!-- Coordonnées -->
+    <section class="contact-infos" aria-labelledby="contact-coords-title">
+      <div class="container">
+        <h2 id="contact-coords-title" class="sr-only">Coordonnées</h2>
+        <div class="contact-infos-grid">
+
+          <div class="contact-card contact-card-tel">
+            <div class="contact-card-icon" aria-hidden="true">📞</div>
+            <p class="contact-card-label">Téléphone</p>
+            <a href="tel:+33641843634">06 41 84 36 34</a>
+            <p style="font-size: 0.8125rem; font-weight: 400; color: var(--c-text-muted);">Lun–ven 8h–18h · Sam 9h–12h</p>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-icon" aria-hidden="true">✉️</div>
+            <p class="contact-card-label">Email</p>
+            <a href="#" data-email="lafeemenage|gmail.com" data-email-label="lafeemenage@gmail.com" aria-label="Envoyer un email à Florence (ouvre votre application email)">lafeemenage@gmail.com</a>
+            <p style="font-size: 0.8125rem; font-weight: 400; color: var(--c-text-muted);">Réponse garantie sous 24h</p>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-icon" aria-hidden="true">📍</div>
+            <p class="contact-card-label">Adresse</p>
+            <p>38 Kerlay<br>56310 Melrand<br>Morbihan</p>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-icon" aria-hidden="true">🗺️</div>
+            <p class="contact-card-label">Zone d'intervention</p>
+            <p>Tout le Morbihan<br>Pontivy · Lorient · Vannes · Auray</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Horaires -->
+    <section class="contact-horaires" aria-labelledby="horaires-title">
+      <div class="container">
+        <h2 id="horaires-title">Horaires d'intervention</h2>
+        <table class="horaires-table">
+          <caption class="sr-only">Horaires d'intervention de La Fée Ménage</caption>
+          <thead>
+            <tr>
+              <th scope="col">Jour</th>
+              <th scope="col">Horaire</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Lundi</th>
+              <td>8h00 – 18h00</td>
+            </tr>
+            <tr>
+              <th scope="row">Mardi</th>
+              <td>8h00 – 18h00</td>
+            </tr>
+            <tr>
+              <th scope="row">Mercredi</th>
+              <td>8h00 – 18h00</td>
+            </tr>
+            <tr>
+              <th scope="row">Jeudi</th>
+              <td>8h00 – 18h00</td>
+            </tr>
+            <tr>
+              <th scope="row">Vendredi</th>
+              <td>8h00 – 18h00</td>
+            </tr>
+            <tr>
+              <th scope="row">Samedi</th>
+              <td>9h00 – 12h00</td>
+            </tr>
+            <tr>
+              <th scope="row">Dimanche</th>
+              <td>Fermé</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="horaires-note">Interventions ponctuelles en dehors des horaires sur demande — précisez votre contrainte dans votre message.</p>
+      </div>
+    </section>
+
+    <!-- Zone d'intervention -->
+    <section class="contact-map-section" aria-labelledby="map-title">
+      <div class="container">
+        <h2 id="map-title">Zone d'intervention</h2>
+        <p class="contact-map-intro">
+          La Fée Ménage intervient dans tout le département du Morbihan — particuliers et professionnels — depuis Melrand (56310).
+        </p>
+        <div class="zones-grid" style="margin-bottom: var(--space-8);">
+          <a href="/lorient/" class="zone-link">Lorient</a>
+          <a href="/vannes/" class="zone-link">Vannes</a>
+          <a href="/pontivy/" class="zone-link">Pontivy</a>
+          <a href="/auray/" class="zone-link">Auray</a>
+          <a href="/morbihan/" class="zone-link">Morbihan</a>
+          <a href="/melrand/" class="zone-link">Melrand</a>
+        </div>
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=38+Kerlay+56310+Melrand"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="map-placeholder"
+          aria-label="Voir 38 Kerlay, Melrand sur Google Maps (ouvre un nouvel onglet)"
+          style="display:block;text-decoration:none;cursor:pointer;"
+        >
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--c-vert)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin:0 auto var(--sp-3)">
+            <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+          </svg>
+          <p style="color:var(--c-vert-fonce);font-weight:600;margin-bottom:var(--sp-2)">38 Kerlay, 56310 Melrand</p>
+          <p style="font-size:0.875rem;color:var(--c-text-muted)">Voir sur Google Maps →</p>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <div data-component="cta-devis"></div>
+  <div data-component="footer"></div>
+
+  <script src="/assets/js/components.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

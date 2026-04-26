@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 64" width="260" height="64" role="img" aria-label="La Fée Ménage — Florence Marionnel">
+  <!--
+    PLACEHOLDER — Remplacer ce fichier par le vrai logo fourni par Florence.
+    Conserver le nom : logo-la-fee-menage.svg
+    Supprimer le téléphone et l'email du logo source avant intégration.
+  -->
+
+  <!-- Fée stylisée -->
+  <!-- Corps -->
+  <ellipse cx="26" cy="36" rx="7" ry="9" fill="#F2A7B8"/>
+  <!-- Tête -->
+  <circle cx="26" cy="22" r="7" fill="#F2A7B8"/>
+  <!-- Aile gauche -->
+  <ellipse cx="14" cy="30" rx="9" ry="6" fill="#FDE8EE" transform="rotate(-25 14 30)" opacity="0.9"/>
+  <!-- Aile droite -->
+  <ellipse cx="38" cy="30" rx="9" ry="6" fill="#FDE8EE" transform="rotate(25 38 30)" opacity="0.9"/>
+  <!-- Baguette magique -->
+  <line x1="33" y1="42" x2="46" y2="28" stroke="#5A9E3A" stroke-width="2" stroke-linecap="round"/>
+  <!-- Étoile de baguette -->
+  <path d="M46 25 l2 5 5 0 -4 3.5 1.5 5.5 -4.5-2.5 -4.5 2.5 1.5-5.5 -4-3.5 5 0z" fill="#F2A7B8"/>
+
+  <!-- Texte script — La Fée Ménage -->
+  <text
+    x="62"
+    y="30"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="20"
+    font-style="italic"
+    fill="#5A9E3A"
+    font-weight="400"
+    letter-spacing="0.02em"
+  >La Fée Ménage</text>
+
+  <!-- Sous-titre — Florence Marionnel -->
+  <text
+    x="64"
+    y="47"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="11"
+    fill="#2D5A1B"
+    letter-spacing="0.06em"
+    font-weight="400"
+  >Florence Marionnel</text>
+</svg>
