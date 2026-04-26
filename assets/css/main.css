@@ -1437,3 +1437,76 @@ body.nav-open {
 .avis-cta-link a:focus-visible {
   color: var(--c-vert-fonce);
 }
+
+/* ============================================================
+   ANIMATIONS TITRES (IntersectionObserver)
+   ============================================================ */
+
+.anim-title {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.anim-title.anim-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-title {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ============================================================
+   BANDEAU DÉFILANT (accueil)
+   ============================================================ */
+
+.scroll-banner {
+  overflow: hidden;
+  background: var(--c-rose);
+  padding: 11px 0;
+  border-top: 1px solid rgba(255,255,255,0.25);
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+}
+
+.scroll-banner-track {
+  display: flex;
+  gap: 0;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.scroll-banner-track span {
+  white-space: nowrap;
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0 var(--sp-6);
+}
+
+.scroll-banner-track span.sep {
+  opacity: 0.5;
+  padding: 0 var(--sp-2);
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.scroll-banner:hover .scroll-banner-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-banner-track {
+    animation: none;
+  }
+}

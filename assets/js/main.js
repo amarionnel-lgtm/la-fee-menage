@@ -5,6 +5,7 @@ document.addEventListener('components:loaded', () => {
   initActiveNav();
   initEmailObfuscation();
   initFooterYear();
+  initTitleAnimations();
 });
 
 function initHeaderScroll() {
@@ -106,4 +107,26 @@ function initEmailObfuscation() {
 function initFooterYear() {
   const el = document.getElementById('footer-year');
   if (el) el.textContent = new Date().getFullYear();
+}
+
+function initTitleAnimations() {
+  const titles = document.querySelectorAll('main h1, main h2');
+  if (!('IntersectionObserver' in window)) {
+    titles.forEach(el => el.classList.add('anim-visible'));
+    return;
+  }
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('anim-visible');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  titles.forEach((el, i) => {
+    el.classList.add('anim-title');
+    el.style.transitionDelay = `${Math.min(i % 3, 2) * 80}ms`;
+    obs.observe(el);
+  });
 }
