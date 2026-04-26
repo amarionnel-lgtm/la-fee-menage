@@ -1420,6 +1420,30 @@ body.nav-open {
   border-radius: var(--r-full);
 }
 
+/* === GRILLES PRESTATION + ÉTAPES =========================== */
+
+.prestation-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-12);
+  align-items: start;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-6);
+  list-style: none;
+  counter-reset: steps;
+}
+
+@media (max-width: 768px) {
+  .prestation-grid,
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .avis-cta-link {
   text-align: center;
   margin-top: var(--sp-10);
