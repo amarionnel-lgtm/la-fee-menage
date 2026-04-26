@@ -1295,20 +1295,19 @@ body.nav-open {
   }
 }
 
-/* === PHOTO FLORENCE ======================================= */
+/* === ILLUSTRATION HERO ==================================== */
 
 .florence-photo-wrapper {
-  border-radius: var(--r-lg);
-  overflow: hidden;
-  aspect-ratio: 3 / 4;
-  background: var(--c-rose-poudre);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .florence-photo-wrapper img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
+  max-width: 480px;
+  height: auto;
+  object-fit: contain;
 }
 
 /* === UTILITAIRES ========================================== */
