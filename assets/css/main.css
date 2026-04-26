@@ -1295,7 +1295,7 @@ body.nav-open {
   }
 }
 
-/* === PHOTO FLORENCE ======================================= */
+/* === PHOTO FLORENCE (hero) ================================ */
 
 .florence-photo-wrapper {
   border-radius: var(--r-lg);
@@ -1309,6 +1309,21 @@ body.nav-open {
   height: 100%;
   object-fit: cover;
   object-position: center top;
+}
+
+/* === ILLUSTRATION FÉE (section qui-sommes-nous) =========== */
+
+.fee-illustration-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fee-illustration-wrapper img {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  object-fit: contain;
 }
 
 /* === UTILITAIRES ========================================== */
