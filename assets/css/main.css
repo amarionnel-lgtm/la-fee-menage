@@ -1338,3 +1338,87 @@ body.nav-open {
   white-space: nowrap;
   border-width: 0;
 }
+
+/* ============================================================
+   AVIS CLIENTS
+   ============================================================ */
+
+.avis-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-6);
+  margin-top: var(--sp-10);
+}
+
+@media (min-width: 640px) {
+  .avis-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.avis-card {
+  background: var(--c-fond);
+  border: 1px solid var(--c-border-rose);
+  border-radius: var(--r-lg);
+  padding: var(--sp-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.avis-etoiles {
+  color: var(--c-rose);
+  font-size: 1.125rem;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+.avis-texte {
+  margin: 0;
+  font-style: italic;
+  color: var(--c-text);
+  line-height: 1.65;
+  font-size: 0.9375rem;
+  flex: 1;
+}
+
+.avis-auteur {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--c-border);
+}
+
+.avis-nom {
+  font-weight: 600;
+  color: var(--c-text);
+  font-size: 0.875rem;
+}
+
+.avis-source {
+  font-size: 0.75rem;
+  color: var(--c-text-muted);
+  background: var(--c-surface-rose);
+  padding: 2px var(--sp-3);
+  border-radius: var(--r-full);
+}
+
+.avis-cta-link {
+  text-align: center;
+  margin-top: var(--sp-10);
+}
+
+.avis-cta-link a {
+  color: var(--c-vert);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.avis-cta-link a:hover,
+.avis-cta-link a:focus-visible {
+  color: var(--c-vert-fonce);
+}
