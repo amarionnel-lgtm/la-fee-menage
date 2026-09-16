@@ -28,7 +28,7 @@ const corps = `
     <section class="hero">
       <div class="container hero__inner">
         <div class="hero__texte">
-          <span class="marque">La fée ménage</span>
+          <span class="marque" aria-hidden="true">La fée ménage</span>
           <h1>Le ménage bien fait, <em>chez vous</em> comme au bureau</h1>
           <p class="lead">Florence Marionnel nettoie et entretient les maisons, les bureaux et les parties communes autour de Pontivy, Lorient, Auray et Vannes. Une seule personne, du premier appel au dernier coup de chiffon.</p>
           <form class="commune-form" action="/contact/" method="get" data-commune-form>

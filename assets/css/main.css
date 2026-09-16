@@ -145,7 +145,7 @@ strong { font-weight: 700; }
 .section--sombre h2, .section--sombre h3 { color: var(--c-text-inverse); }
 .section--sombre .lead, .section--sombre .petit { color: var(--c-text-inverse-2); }
 .section--sombre a { color: var(--c-text-inverse); }
-.section--sombre .fiche { border-left-color: var(--c-magenta); opacity: 1; transform: none; }
+.section--sombre .fiche { border-left-color: var(--c-magenta); background: transparent; transform: none; }
 .section--sombre .fiche li { color: var(--c-text-inverse); }
 .section--sombre .prose p { color: var(--c-text-inverse-2); }
 .entete { max-width: 62ch; margin-bottom: var(--s-12); }
@@ -351,10 +351,12 @@ body.menu-ouvert { overflow: hidden; }
 .fiche {
   padding: var(--s-6) var(--s-6) var(--s-6) var(--s-8);
   border-left: 3px solid var(--c-rose-2);
-  transition: border-color var(--t-base), opacity var(--t-base), transform var(--t-base);
-  opacity: .55; transform: translateX(6px);
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+  transition: border-color var(--t-base), background var(--t-base), transform var(--t-base);
+  transform: translateX(6px);
 }
-.fiche.active { border-left-color: var(--c-magenta); opacity: 1; transform: none; }
+.fiche.active { border-left-color: var(--c-magenta); background: var(--c-bg); transform: none; }
+.fiche.active li { color: var(--c-text); }
 .fiche h3 { display: flex; align-items: baseline; gap: var(--s-3); color: var(--c-prune); margin-bottom: var(--s-3); }
 .fiche h3 small { font-family: var(--f-corps); font-size: var(--t-xs); font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--c-magenta-texte); }
 .fiche ul { display: grid; gap: 6px; padding-left: 0; }
@@ -372,7 +374,7 @@ body.menu-ouvert { overflow: hidden; }
   .maison__colle { top: var(--header-h); z-index: 2; background: var(--c-bg); padding-block: var(--s-3); margin-inline: calc(-1 * var(--gutter)); padding-inline: var(--gutter); }
   .maison__svg { max-height: 34vh; margin-inline: auto; }
   .maison__legende { margin-top: var(--s-2); }
-  .fiche { opacity: 1; transform: none; padding-left: var(--s-5); }
+  .fiche { transform: none; padding-left: var(--s-5); }
 }
 
 /* === PRESTATIONS (liste inégale) =========================== */
@@ -611,7 +613,7 @@ body.menu-ouvert { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
   .hero__fee { animation: none; }
-  .fiche, .piece__fond, .piece__etoile, .piece__meuble { transition: none; }
+  .fiche, .piece__fond, .piece__etoile, .piece__meuble { transition: none; transform: none; }
 }
 
 /* === PAGE 404 ============================================== */

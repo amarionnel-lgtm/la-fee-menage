@@ -51,7 +51,7 @@ ${corps}
 
 /* ---------- en-tête ---------- */
 export function logo(petit = false) {
-  return `<a href="/" class="logo" aria-label="La Fée Ménage, accueil">
+  return `<a href="/" class="logo" title="Accueil">
       <img src="/assets/images/fee-logo.png" alt="" width="44" height="56">
       <span class="logo__texte"><span class="logo__nom">La fée ménage</span><span class="logo__sous">Nettoyage · entretien</span></span>
     </a>`;
