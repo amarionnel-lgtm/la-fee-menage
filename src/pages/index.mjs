@@ -49,11 +49,11 @@ const corps = `
         </div>
         <div class="hero__visuel reveal">
           <div class="hero__tache" aria-hidden="true"></div>
-          <img class="hero__fee" src="/assets/images/fee-magenta.png" alt="" width="705" height="897" aria-hidden="true">
+          <img class="hero__fee" src="/assets/images/fee-magenta-480.png" srcset="/assets/images/fee-magenta-240.png 240w, /assets/images/fee-magenta-480.png 480w" sizes="(max-width: 599px) 34vw, (max-width: 899px) 160px, 240px" alt="" width="480" height="611" aria-hidden="true">
           <div class="hero__photo">
             <picture>
-              <source srcset="/assets/images/florence-marionnel.webp" type="image/webp">
-              <img src="/assets/images/florence-marionnel.jpg" alt="Florence Marionnel devant sa camionnette La Fée Ménage" width="1532" height="1532" fetchpriority="high" decoding="async">
+              <source srcset="/assets/images/florence-marionnel-900.webp 900w, /assets/images/florence-marionnel.webp 1532w" sizes="(max-width: 899px) 100vw, 45vw" type="image/webp">
+              <img src="/assets/images/florence-marionnel-900.jpg" srcset="/assets/images/florence-marionnel-900.jpg 900w, /assets/images/florence-marionnel.jpg 1532w" sizes="(max-width: 899px) 100vw, 45vw" alt="Florence Marionnel devant sa camionnette La Fée Ménage" width="1532" height="1532" fetchpriority="high" decoding="async">
             </picture>
           </div>
           <div class="hero__etiquette" aria-hidden="true"><span class="etoiles">★★★★★</span><strong>${site.note}</strong>${site.nbAvis} avis Google</div>
@@ -151,7 +151,7 @@ const corps = `
       <div class="container">
         <div class="entete">
           <p class="sur-titre">Depuis Melrand</p>
-          <h2 id="zones-titre">Le Morbihan, à moins d'une heure de route</h2>
+          <h2 id="zones-titre">Jusqu'où est-ce que je me déplace ?</h2>
         </div>
         <div class="zones">
           ${carteSvg}
@@ -192,7 +192,7 @@ export default {
   html: layout({
     path: '/',
     titre: 'La Fée Ménage, entreprise de nettoyage dans le Morbihan',
-    description: 'Ménage régulier, bureaux, copropriétés, vitres, fin de chantier, remise en état et nettoyage extrême dans le Morbihan. Florence Marionnel, installée à Melrand, intervient elle-même. Devis gratuit après visite.',
+    description: 'Ménage régulier, bureaux, copropriétés, vitres, fin de chantier et nettoyage extrême dans le Morbihan. Florence Marionnel intervient elle-même. Devis gratuit.',
     corps,
     schema: [entrepriseSchema({ description: 'Entreprise de nettoyage dans le Morbihan : ménage régulier à domicile, bureaux et commerces, copropriétés, vitres, terrasses, remise en état, fin de chantier, nettoyage extrême et syndrome de Diogène.' })],
   }),

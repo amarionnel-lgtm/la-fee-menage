@@ -53,7 +53,7 @@ export default {
   html: layout({
     path: '/contact/',
     titre: 'Contact et devis gratuit | La Fée Ménage, nettoyage Morbihan',
-    description: 'Demandez un devis gratuit à La Fée Ménage : formulaire, téléphone 06 41 84 36 34, réponse sous 24 h. Florence Marionnel, Melrand, interventions dans tout le Morbihan.',
+    description: 'Devis gratuit La Fée Ménage : formulaire ou téléphone 06 41 84 36 34, réponse sous 24 h. Florence Marionnel, Melrand, interventions dans tout le Morbihan.',
     corps,
     schema: [entrepriseSchema(), arianeSchema(fil)],
   }),

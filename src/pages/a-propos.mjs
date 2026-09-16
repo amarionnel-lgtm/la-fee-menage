@@ -19,8 +19,8 @@ const corps = `
           <div class="hero__tache" aria-hidden="true"></div>
           <div class="hero__photo">
             <picture>
-              <source srcset="/assets/images/florence-marionnel.webp" type="image/webp">
-              <img src="/assets/images/florence-marionnel.jpg" alt="Florence Marionnel devant sa camionnette, au bord de la mer" width="1532" height="1532" decoding="async">
+              <source srcset="/assets/images/florence-marionnel-900.webp 900w, /assets/images/florence-marionnel.webp 1532w" sizes="(max-width: 899px) 100vw, 45vw" type="image/webp">
+              <img src="/assets/images/florence-marionnel-900.jpg" srcset="/assets/images/florence-marionnel-900.jpg 900w, /assets/images/florence-marionnel.jpg 1532w" sizes="(max-width: 899px) 100vw, 45vw" alt="Florence Marionnel devant sa camionnette, au bord de la mer" width="1532" height="1532" decoding="async">
             </picture>
           </div>
         </div>
@@ -66,7 +66,7 @@ export default {
   html: layout({
     path: '/a-propos/',
     titre: 'Florence Marionnel, fondatrice de La Fée Ménage à Melrand',
-    description: 'Florence Marionnel, entreprise de nettoyage La Fée Ménage à Melrand (Morbihan) : une seule interlocutrice, certifiée BGE et Certibiocides, produits écologiques, devis écrit après visite.',
+    description: 'Florence Marionnel, La Fée Ménage à Melrand (Morbihan) : une seule interlocutrice, certifiée BGE et Certibiocides, produits écologiques, devis écrit après visite.',
     corps,
     schema: [entrepriseSchema(), { '@type': 'Person', name: site.proprietaire, jobTitle: 'Fondatrice', worksFor: { '@id': site.url + '/#entreprise' }, url: site.url + '/a-propos/' }, arianeSchema(fil)],
   }),

@@ -6,7 +6,7 @@ export const villes = [
     temps: "≈ 25 min",
     km: "20 km",
     titre: "Nettoyage à Pontivy et Centre-Morbihan",
-    description: "Nettoyage professionnel à Pontivy et Centre-Morbihan (Noyal-Pontivy, Pluméliau, Cléguérec) : ménage régulier, bureaux, remise en état, fin de chantier, vitres, Diogène. Devis gratuit.",
+    description: "Nettoyage à Pontivy et en Centre-Morbihan : ménage régulier, bureaux, remise en état, fin de chantier, vitres, Diogène. À 25 min de Melrand. Devis gratuit.",
     h1: "Nettoyage à <em>Pontivy</em> et en Centre-Morbihan",
     intro: [
       "Pontivy est la ville la plus proche de chez moi : une vingtaine de kilomètres depuis Melrand, vingt-cinq minutes de route. C'est ma zone d'intervention la plus active. Je connais la ville : la cité médiévale autour du château des Rohan, les quartiers napoléoniens, les zones pavillonnaires de Noyal-Pontivy.",
@@ -26,7 +26,7 @@ export const villes = [
     temps: "≈ 45 min",
     km: "45 km",
     titre: "Nettoyage à Lorient et dans l'agglomération",
-    description: "Nettoyage professionnel à Lorient, Lanester, Hennebont, Ploemeur, Guidel : ménage régulier, bureaux, copropriétés, remise en état, fin de chantier, vitres. Devis gratuit sous 24 h.",
+    description: "Nettoyage à Lorient, Lanester, Hennebont, Ploemeur, Guidel : ménage régulier, bureaux, copropriétés, remise en état, vitres. Devis gratuit sous 24 h.",
     h1: "Nettoyage à <em>Lorient</em> et dans l'agglomération",
     intro: [
       "J'interviens à Lorient et dans toute l'agglomération, Lanester, Hennebont, Ploemeur, Guidel, Larmor-Plage, pour les particuliers comme pour les entreprises. Quarante-cinq minutes de route depuis Melrand, un trajet que je fais chaque semaine.",
@@ -46,7 +46,7 @@ export const villes = [
     temps: "≈ 45 min",
     km: "40 km",
     titre: "Nettoyage à Auray et dans le pays d'Auray",
-    description: "Nettoyage à Auray, Sainte-Anne-d'Auray, Pluvigner, Carnac : gîtes et locations saisonnières, résidences secondaires, ménage régulier, remise en état, vitres, terrasses. Devis gratuit.",
+    description: "Nettoyage à Auray, Pluvigner, Carnac : gîtes et locations saisonnières, résidences secondaires, ménage régulier, remise en état, vitres. Devis gratuit.",
     h1: "Nettoyage à <em>Auray</em> et dans le pays d'Auray",
     intro: [
       "Auray et son pays, Pluvigner, Brec'h, Sainte-Anne-d'Auray, Carnac et jusqu'à la presqu'île de Quiberon, font partie de mes zones d'intervention régulières, à quarante-cinq minutes de Melrand.",
@@ -66,7 +66,7 @@ export const villes = [
     temps: "≈ 55 min",
     km: "55 km",
     titre: "Nettoyage à Vannes et autour du golfe",
-    description: "Nettoyage professionnel à Vannes, Séné, Saint-Avé, Arradon : ménage régulier, bureaux, remise en état, résidences secondaires, vitres, fin de chantier. Devis gratuit sous 24 h.",
+    description: "Nettoyage à Vannes, Séné, Saint-Avé, Arradon : ménage régulier, bureaux, remise en état, résidences secondaires, vitres. Devis gratuit sous 24 h.",
     h1: "Nettoyage à <em>Vannes</em> et autour du golfe",
     intro: [
       "Vannes mêle vieille ville, quartiers résidentiels et zones d'activité. J'interviens à Vannes et dans son agglomération, Séné, Theix-Noyalo, Saint-Avé, Arradon, Baden, à un peu moins d'une heure de Melrand.",
@@ -86,7 +86,7 @@ export const villes = [
     temps: "siège",
     km: "0 km",
     titre: "Nettoyage à Melrand et dans les communes voisines",
-    description: "La Fée Ménage est installée à Melrand (56310). Nettoyage à Melrand, Pluméliau, Cléguérec, Bubry, Saint-Barthélemy : ménage régulier, remise en état, vitres, terrasses. Pas de frais de déplacement.",
+    description: "Nettoyage à Melrand, Pluméliau, Cléguérec, Bubry, Saint-Barthélemy : ménage régulier, remise en état, vitres, terrasses. Sans frais de déplacement.",
     h1: "Nettoyage à <em>Melrand</em>, là où je suis installée",
     intro: [
       "Melrand, c'est chez moi. Je suis installée au 38 Kerlay et c'est de là que je pars chaque matin. Pour Melrand et les communes limitrophes, Pluméliau-Bieuzy, Cléguérec, Bubry, Saint-Barthélemy, Guémené-sur-Scorff, il n'y a pas de frais de déplacement.",

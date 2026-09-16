@@ -8,8 +8,8 @@ function page(p, i) {
   const etapes = p.etapes ? `
     <section class="section section--blanc" aria-labelledby="etapes-titre">
       <div class="container">
-        <div class="entete"><p class="sur-titre">Comment ça se passe</p><h2 id="etapes-titre">Quatre étapes, du premier appel à la remise des clés</h2></div>
-        <ol class="etapes" role="list">
+        <div class="entete"><p class="sur-titre">Comment ça se passe</p><h2 id="etapes-titre">Comment se déroule l'intervention ?</h2></div>
+        <ol class="etapes" id="etapes" role="list">
           ${p.etapes.map(([t, d]) => `<li><strong>${t}</strong><p>${d}</p></li>`).join('')}
         </ol>
       </div>
@@ -37,7 +37,7 @@ function page(p, i) {
     <section class="section ${p.discret ? 'section--sombre' : 'section--rose'}" aria-labelledby="inclus-titre">
       <div class="container florence">
         <div class="prose">
-          <h2 id="inclus-titre">Ce que comprend ${p.discret ? "l'intervention" : 'la prestation'}</h2>
+          <h2 id="inclus-titre">Que comprend ${p.discret ? "l'intervention" : 'la prestation'} ?</h2>
           <p>${p.intro[1]}</p>
         </div>
         <ul class="fiche active" role="list" aria-label="Liste détaillée">
@@ -52,7 +52,7 @@ function page(p, i) {
 
     <section class="section section--blanc" aria-labelledby="communes-titre">
       <div class="container">
-        <div class="entete"><p class="sur-titre">Où</p><h2 id="communes-titre">${p.nom} : les communes où j'interviens</h2>
+        <div class="entete"><p class="sur-titre">Où</p><h2 id="communes-titre">Où est-ce que j'interviens pour ${p.nom.toLowerCase()} ?</h2>
         <p class="lead">Depuis Melrand, dans tout le Morbihan. Le temps de route est indiqué à titre indicatif.</p></div>
         <div class="communes-voisines">
           ${communes.map((c) => `<a href="/${c.slug}/">${svg.lieu} ${c.nom}${c.temps === 'siège' ? '' : ' · ' + c.temps}</a>`).join('')}
@@ -86,6 +86,11 @@ function page(p, i) {
     },
     faqSchema(p.faq),
     arianeSchema(fil),
+    ...(p.etapes ? [{
+      '@type': 'HowTo',
+      name: 'Comment se déroule une intervention après syndrome de Diogène',
+      step: p.etapes.map(([t, d], n) => ({ '@type': 'HowToStep', position: n + 1, name: t, text: d })),
+    }] : []),
   ];
 
   return {

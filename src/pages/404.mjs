@@ -4,7 +4,7 @@ import { layout } from '../partials.mjs';
 const corps = `
     <section class="section p404">
       <div class="container">
-        <img src="/assets/images/fee-magenta.png" alt="" width="705" height="897">
+        <img src="/assets/images/fee-magenta-480.png" alt="" width="480" height="611">
         <p class="sur-titre">Erreur 404</p>
         <h1>Cette page a été rangée ailleurs</h1>
         <p class="lead">L'adresse n'existe pas ou plus. Le plus simple est de repartir de l'accueil.</p>

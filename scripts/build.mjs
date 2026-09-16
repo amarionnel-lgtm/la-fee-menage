@@ -63,6 +63,18 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
+User-agent: Claude-User
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
 Sitemap: ${site.url}/sitemap.xml
 `);
 

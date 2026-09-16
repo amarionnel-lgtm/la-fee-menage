@@ -46,7 +46,7 @@ export default {
   html: layout({
     path: '/morbihan/',
     titre: 'Nettoyage dans tout le Morbihan, depuis Melrand | La Fée Ménage',
-    description: 'La Fée Ménage intervient dans tout le Morbihan depuis Melrand : Pontivy, Lorient, Auray, Vannes et toutes les communes du 56. Devis gratuit sous 24 h, forfait de déplacement précisé dans le devis.',
+    description: 'La Fée Ménage intervient dans tout le Morbihan depuis Melrand : Pontivy, Lorient, Auray, Vannes et toutes les communes du 56. Devis gratuit sous 24 h.',
     corps,
     schema: [entrepriseSchema(), faqSchema(questions), arianeSchema(fil)],
   }),

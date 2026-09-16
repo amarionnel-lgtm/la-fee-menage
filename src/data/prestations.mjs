@@ -7,8 +7,8 @@ export const prestations = [
     court: "Chaque semaine ou tous les quinze jours, chez vous, avec les mêmes gestes à chaque passage.",
     surTitre: "Particuliers et locations saisonnières",
     h1: "Ménage et entretien régulier <em>à domicile</em> dans le Morbihan",
-    titre: "Ménage à domicile et entretien régulier dans le Morbihan",
-    description: "Ménage régulier à domicile dans le Morbihan par Florence Marionnel, La Fée Ménage : passage hebdomadaire ou bimensuel, gîtes et locations saisonnières, produits écologiques. Devis gratuit.",
+    titre: "Ménage régulier à domicile dans le Morbihan",
+    description: "Ménage régulier à domicile dans le Morbihan : passage hebdomadaire ou bimensuel, gîtes et locations saisonnières, produits écologiques. Devis après visite.",
     intro: [
       "Le ménage régulier, c'est le cœur de mon métier. Un passage chaque semaine, tous les quinze jours ou une fois par mois, à jour fixe, avec la même personne : moi. Je viens avec mon matériel et mes produits, je suis la fiche établie ensemble lors de la première visite, et vous retrouvez votre maison propre sans y avoir pensé.",
       "J'interviens autour de Melrand, Pontivy, Lorient, Auray et Vannes, chez les particuliers, dans les résidences secondaires et dans les gîtes et locations saisonnières entre deux séjours. Le tarif est fixé au devis, après une visite du logement, et ne bouge pas en cours d'année.",
@@ -41,8 +41,8 @@ export const prestations = [
     court: "Entretien de locaux professionnels, avant l'ouverture ou après la fermeture.",
     surTitre: "Professionnels",
     h1: "Nettoyage de <em>bureaux et commerces</em> dans le Morbihan",
-    titre: "Nettoyage de bureaux et commerces dans le Morbihan",
-    description: "Entretien régulier ou ponctuel de bureaux, commerces et cabinets dans le Morbihan. Passage avant ouverture ou après fermeture, produits écologiques sans odeur. Devis gratuit.",
+    titre: "Nettoyage de bureaux et commerces, Morbihan",
+    description: "Entretien régulier ou ponctuel de bureaux, commerces et cabinets dans le Morbihan, avant ouverture ou après fermeture, sans odeur chimique. Devis gratuit.",
     intro: [
       "Un lieu de travail propre, c'est une équipe qui travaille mieux et des clients qui se sentent attendus. J'assure l'entretien régulier ou ponctuel de bureaux, commerces, cabinets et locaux professionnels dans le Morbihan, avec des produits écologiques qui ne laissent aucune odeur chimique.",
       "TPE, profession libérale, commerce de centre-ville ou PME en zone d'activité à Pontivy ou Lorient : je m'adapte à vos horaires. Passage avant l'ouverture, après la fermeture ou en dehors des heures d'affluence, le planning est calé sur votre activité.",
@@ -74,8 +74,8 @@ export const prestations = [
     court: "Halls, escaliers, locaux poubelles, à un rythme fixé avec le syndic.",
     surTitre: "Syndics et bailleurs",
     h1: "Nettoyage de <em>copropriétés</em> et parties communes dans le Morbihan",
-    titre: "Nettoyage de copropriétés et parties communes dans le Morbihan",
-    description: "Entretien des parties communes d'immeubles dans le Morbihan : halls, escaliers, locaux poubelles, vitres. Passage régulier fixé avec le syndic ou le bailleur. Devis gratuit.",
+    titre: "Nettoyage de copropriétés, Morbihan",
+    description: "Entretien des parties communes d'immeubles dans le Morbihan : halls, escaliers, locaux poubelles, vitres. Calendrier fixé avec le syndic. Devis gratuit.",
     intro: [
       "Un hall propre et un escalier entretenu, c'est la première chose que voient les habitants et les visiteurs d'un immeuble. J'assure l'entretien des parties communes de petites et moyennes copropriétés dans le Morbihan, à un rythme fixé avec le syndic, le conseil syndical ou le bailleur.",
       "Le passage suit toujours la même fiche : halls, escaliers, paliers, portes vitrées, locaux poubelles, avec la sortie et la rentrée des conteneurs si vous le souhaitez. Vous recevez un tarif annuel et un calendrier, sans surprise.",
@@ -108,7 +108,7 @@ export const prestations = [
     surTitre: "Particuliers et professionnels",
     h1: "Nettoyage de <em>vitres</em> dans le Morbihan",
     titre: "Nettoyage de vitres dans le Morbihan",
-    description: "Nettoyage de vitres, baies vitrées, vérandas et vitrines dans le Morbihan. Technique raclette sans trace, intérieur et extérieur, contrats réguliers possibles. Devis gratuit.",
+    description: "Nettoyage de vitres, baies, vérandas et vitrines dans le Morbihan. Raclette sans trace, intérieur et extérieur, contrats réguliers possibles. Devis gratuit.",
     intro: [
       "Des vitres sans trace ni auréole, même par grand soleil : c'est une question de méthode. Mouilleur, raclette, microfibre sur les bords. J'interviens chez les particuliers comme chez les commerçants, pour les fenêtres, les baies vitrées, les vérandas et les vitrines.",
       "Intérieur et extérieur, châssis et rails compris. Pour les vitres accessibles depuis le sol ou depuis l'intérieur, une perche suffit ; pour les hauteurs qui demandent un échafaudage ou une nacelle, on s'organise en amont.",
@@ -140,8 +140,8 @@ export const prestations = [
     court: "Démoussage, dallages, bois, mobilier de jardin et entretien des abords.",
     surTitre: "Extérieurs",
     h1: "Terrasses, <em>extérieurs</em> et espaces verts dans le Morbihan",
-    titre: "Nettoyage de terrasses et entretien des extérieurs dans le Morbihan",
-    description: "Démoussage et nettoyage de terrasses en bois, pierre ou composite, entretien des abords et petits espaces verts dans le Morbihan. Produits sans danger pour les plantes et les animaux. Devis gratuit.",
+    titre: "Nettoyage de terrasses et extérieurs, Morbihan",
+    description: "Démoussage de terrasses bois, pierre ou composite, abords et petits espaces verts dans le Morbihan. Produits sans danger pour plantes et animaux.",
     intro: [
       "La terrasse est la première victime de l'humidité bretonne : mousses, lichens, traces noires, taches de graisse. Je redonne son aspect à votre espace extérieur avec un nettoyage adapté à chaque surface, pierre, bois, composite ou dallage, et une pression réglée pour ne rien abîmer.",
       "J'entretiens aussi les abords : allées, bordures, mobilier de jardin, petits espaces verts (tonte, désherbage des jointures, feuilles ramassées). Les produits sont biodégradables et sans risque pour vos plantes et vos animaux une fois la surface rincée.",
@@ -173,8 +173,8 @@ export const prestations = [
     court: "Logement rendu propre pour l'état des lieux, ou prêt avant votre arrivée.",
     surTitre: "Locataires, propriétaires, agences",
     h1: "<em>Remise en état</em> et nettoyage de déménagement dans le Morbihan",
-    titre: "Remise en état et nettoyage de déménagement dans le Morbihan",
-    description: "Nettoyage complet avant état des lieux ou avant emménagement dans le Morbihan. Remise en état entre deux locations pour propriétaires et agences. Devis gratuit, intervention rapide.",
+    titre: "Remise en état et déménagement, Morbihan",
+    description: "Nettoyage complet avant état des lieux ou emménagement dans le Morbihan, remise en état entre deux locations pour bailleurs et agences. Devis gratuit.",
     intro: [
       "Rendre les clés d'un logement impeccable, c'est mettre toutes les chances de son côté pour récupérer l'intégralité du dépôt de garantie. Emménager dans un logement nettoyé de fond en comble, c'est commencer sur de bonnes bases. Je connais les points que regardent les bailleurs lors de l'état des lieux et j'y réponds un par un.",
       "J'interviens pour les particuliers, les propriétaires bailleurs et les agences immobilières du Morbihan, y compris pour les remises en état entre deux locations, avec un délai court quand la date de remise des clés approche.",
@@ -207,7 +207,7 @@ export const prestations = [
     surTitre: "Après travaux",
     h1: "Nettoyage de <em>fin de chantier</em> dans le Morbihan",
     titre: "Nettoyage de fin de chantier dans le Morbihan",
-    description: "Nettoyage après travaux dans le Morbihan : poussière de plâtre, résidus de colle, projections de peinture, vitres de chantier. Intervention sous 48 h après réception. Devis gratuit.",
+    description: "Nettoyage après travaux dans le Morbihan : poussière de plâtre, colle, peinture, vitres de chantier. Intervention sous 48 h après réception. Devis gratuit.",
     intro: [
       "La fin d'un chantier laisse rarement un logement habitable : poussière de plâtre incrustée, résidus de colle sous les carreaux, coulures de peinture sur les vitres, sciure dans chaque recoin. La remise en état après travaux est un métier à part, qui demande de la méthode et du matériel.",
       "J'interviens sur les petits et moyens chantiers du Morbihan : rénovation de maison, aménagement de local professionnel, extension, réhabilitation. Je me cale sur la date de réception des travaux et je peux intervenir dans les 48 heures qui suivent.",
@@ -239,8 +239,8 @@ export const prestations = [
     court: "Logements insalubres et accumulation : une remise en état discrète, sans jugement.",
     surTitre: "Intervention spécialisée",
     h1: "Nettoyage extrême et <em>syndrome de Diogène</em> dans le Morbihan",
-    titre: "Nettoyage syndrome de Diogène et logement insalubre dans le Morbihan",
-    description: "Remise en état de logements insalubres et situations de syndrome de Diogène dans le Morbihan. Intervention discrète, sans véhicule siglé si vous le souhaitez, visite préalable gratuite.",
+    titre: "Nettoyage extrême et Diogène, Morbihan",
+    description: "Remise en état de logements insalubres et syndrome de Diogène dans le Morbihan. Intervention discrète, sans véhicule siglé si besoin, visite gratuite.",
     discret: true,
     intro: [
       "Le syndrome de Diogène est une réalité difficile pour les familles qui la découvrent, souvent lors d'une hospitalisation ou d'un décès. Le logement demande alors une intervention rapide, professionnelle et, avant tout, humaine. Je suis là pour ça.",

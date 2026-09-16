@@ -52,7 +52,7 @@ ${corps}
 /* ---------- en-tête ---------- */
 export function logo(petit = false) {
   return `<a href="/" class="logo" aria-label="La Fée Ménage, accueil">
-      <img src="/assets/images/fee-magenta.png" alt="" width="44" height="56">
+      <img src="/assets/images/fee-logo.png" alt="" width="44" height="56">
       <span class="logo__texte"><span class="logo__nom">La fée ménage</span><span class="logo__sous">Nettoyage · entretien</span></span>
     </a>`;
 }
@@ -167,7 +167,7 @@ export function faqSchema(items) {
 /* ---------- formulaire de devis ---------- */
 export function formulaireDevis({ commune = '', prestation = '' } = {}) {
   const options = prestations.map((p) => `<option value="${p.nom}"${p.nom === prestation ? ' selected' : ''}>${p.nom}</option>`).join('');
-  return `<form class="formulaire" id="devis" action="/api/devis" method="post" novalidate>
+  return `<form class="formulaire" id="devis" action="/api/devis/" method="post" novalidate>
       <div class="formulaire__ligne">
         <div class="champ"><label for="f-nom">Votre nom</label><input id="f-nom" name="nom" type="text" required autocomplete="name" maxlength="80"></div>
         <div class="champ"><label for="f-commune">Votre commune</label><input id="f-commune" name="commune" type="text" required autocomplete="address-level2" maxlength="80" value="${esc(commune)}"></div>
@@ -248,6 +248,7 @@ export function entrepriseSchema(extra = {}) {
     priceRange: 'Devis après visite',
     aggregateRating: { '@type': 'AggregateRating', ratingValue: '5', reviewCount: String(site.nbAvis), bestRating: '5', worstRating: '1' },
     hasCredential: { '@type': 'EducationalOccupationalCredential', name: 'Certifiée BGE' },
+    dateModified: new Date().toISOString().slice(0, 10),
     ...extra,
   };
 }
