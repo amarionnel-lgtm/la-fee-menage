@@ -18,7 +18,7 @@ export function layout({ path, titre, description, corps, schema = [], classe = 
   <title>${esc(titre)}</title>
   <meta name="description" content="${esc(description)}">
   <link rel="canonical" href="${url}">
-  ${noindex ? '<meta name="robots" content="noindex, follow">' : ''}
+  ${noindex || process.env.SITE_PREVIEW ? '<meta name="robots" content="noindex, nofollow">' : ''}
   <meta property="og:type" content="website">
   <meta property="og:url" content="${url}">
   <meta property="og:title" content="${esc(titre)}">

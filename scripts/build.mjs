@@ -37,7 +37,7 @@ ${indexables.map((p) => `  <url><loc>${site.url}${p.path}</loc><lastmod>${aujour
 `);
 
 // robots.txt : les robots d'IA sont nommés, sinon ils ne sont pas couverts par `*`
-writeFileSync(join(DIST, 'robots.txt'), `User-agent: *
+writeFileSync(join(DIST, 'robots.txt'), process.env.SITE_PREVIEW ? 'User-agent: *\nDisallow: /\n' : `User-agent: *
 Allow: /
 Disallow: /mentions-legales/
 Disallow: /api/
