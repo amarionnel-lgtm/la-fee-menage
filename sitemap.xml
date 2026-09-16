@@ -3,7 +3,7 @@
 
   <!-- Accueil -->
   <url>
-    <loc>https://lafeemenage.fr/</loc>
+    <loc>https://www.la-fee-menage.fr/</loc>
     <lastmod>2026-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -11,14 +11,14 @@
 
   <!-- Pages principales -->
   <url>
-    <loc>https://lafeemenage.fr/a-propos/</loc>
+    <loc>https://www.la-fee-menage.fr/a-propos/</loc>
     <lastmod>2026-04-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://lafeemenage.fr/contact/</loc>
+    <loc>https://www.la-fee-menage.fr/contact/</loc>
     <lastmod>2026-04-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
@@ -26,42 +26,42 @@
 
   <!-- Pages service — tête de gondole SEO en premier -->
   <url>
-    <loc>https://lafeemenage.fr/services/nettoyage-syndrome-diogene-morbihan/</loc>
+    <loc>https://www.la-fee-menage.fr/services/nettoyage-syndrome-diogene-morbihan/</loc>
     <lastmod>2026-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://lafeemenage.fr/services/nettoyage-bureaux-morbihan/</loc>
+    <loc>https://www.la-fee-menage.fr/services/nettoyage-bureaux-morbihan/</loc>
     <lastmod>2026-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://lafeemenage.fr/services/nettoyage-demenagement-morbihan/</loc>
+    <loc>https://www.la-fee-menage.fr/services/nettoyage-demenagement-morbihan/</loc>
     <lastmod>2026-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://lafeemenage.fr/services/nettoyage-fin-de-chantier-morbihan/</loc>
+    <loc>https://www.la-fee-menage.fr/services/nettoyage-fin-de-chantier-morbihan/</loc>
     <lastmod>2026-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://lafeemenage.fr/services/nettoyage-vitres-morbihan/</loc>
+    <loc>https://www.la-fee-menage.fr/services/nettoyage-vitres-morbihan/</loc>
     <lastmod>2026-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://lafeemenage.fr/services/nettoyage-terrasse-morbihan/</loc>
+    <loc>https://www.la-fee-menage.fr/services/nettoyage-terrasse-morbihan/</loc>
     <lastmod>2026-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -69,42 +69,42 @@
 
   <!-- Pages villes -->
   <url>
-    <loc>https://lafeemenage.fr/morbihan/</loc>
+    <loc>https://www.la-fee-menage.fr/morbihan/</loc>
     <lastmod>2026-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://lafeemenage.fr/lorient/</loc>
+    <loc>https://www.la-fee-menage.fr/lorient/</loc>
     <lastmod>2026-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://lafeemenage.fr/vannes/</loc>
+    <loc>https://www.la-fee-menage.fr/vannes/</loc>
     <lastmod>2026-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://lafeemenage.fr/pontivy/</loc>
+    <loc>https://www.la-fee-menage.fr/pontivy/</loc>
     <lastmod>2026-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://lafeemenage.fr/auray/</loc>
+    <loc>https://www.la-fee-menage.fr/auray/</loc>
     <lastmod>2026-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://lafeemenage.fr/melrand/</loc>
+    <loc>https://www.la-fee-menage.fr/melrand/</loc>
     <lastmod>2026-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

@@ -36,10 +36,10 @@
       "has": [
         {
           "type": "host",
-          "value": "www.lafeemenage.fr"
+          "value": "la-fee-menage.fr"
         }
       ],
-      "destination": "https://lafeemenage.fr/$1",
+      "destination": "https://www.la-fee-menage.fr/$1",
       "permanent": true
     }
   ],

@@ -3,4 +3,4 @@ Allow: /
 
 Disallow: /mentions-legales/
 
-Sitemap: https://lafeemenage.fr/sitemap.xml
+Sitemap: https://www.la-fee-menage.fr/sitemap.xml
