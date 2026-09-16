@@ -1,132 +1,162 @@
-document.addEventListener('components:loaded', () => {
-  initHeaderScroll();
-  initBurger();
-  initDropdowns();
-  initActiveNav();
-  initEmailObfuscation();
-  initFooterYear();
-  initTitleAnimations();
-});
+/* La Fée Ménage v2 : comportement du site, sans dépendance. */
+(() => {
+  'use strict';
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+  const reduit = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-function initHeaderScroll() {
-  const header = document.querySelector('.site-header');
-  if (!header) return;
-  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 8);
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-}
-
-function initBurger() {
-  const btn = document.getElementById('burger-btn');
-  const nav = document.getElementById('mobile-nav');
-  if (!btn || !nav) return;
-
-  btn.addEventListener('click', () => {
-    const open = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', String(!open));
-    nav.hidden = open;
-    document.body.classList.toggle('nav-open', !open);
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !nav.hidden) {
-      btn.setAttribute('aria-expanded', 'false');
-      nav.hidden = true;
-      document.body.classList.remove('nav-open');
-      btn.focus();
-    }
-  });
-}
-
-function initDropdowns() {
-  document.querySelectorAll('.has-dropdown > a').forEach((trigger) => {
-    trigger.addEventListener('keydown', (e) => {
-      const parent = trigger.closest('.has-dropdown');
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        const expanded = trigger.getAttribute('aria-expanded') === 'true';
-        trigger.setAttribute('aria-expanded', String(!expanded));
-        parent.classList.toggle('open', !expanded);
-      }
-      if (e.key === 'Escape') {
-        trigger.setAttribute('aria-expanded', 'false');
-        parent.classList.remove('open');
-        trigger.focus();
-      }
-    });
-  });
-
-  // Sync aria-expanded avec l'état CSS :hover pour les lecteurs d'écran
-  document.querySelectorAll('.has-dropdown').forEach((parent) => {
-    const trigger = parent.querySelector('[aria-expanded]');
-    if (!trigger) return;
-    parent.addEventListener('mouseenter', () => trigger.setAttribute('aria-expanded', 'true'));
-    parent.addEventListener('mouseleave', () => trigger.setAttribute('aria-expanded', 'false'));
-  });
-
-  document.addEventListener('click', (e) => {
-    document.querySelectorAll('.has-dropdown.open').forEach((el) => {
-      if (!el.contains(e.target)) {
-        el.classList.remove('open');
-        el.querySelector('[aria-expanded]')?.setAttribute('aria-expanded', 'false');
-      }
-    });
-  });
-}
-
-function initActiveNav() {
-  const path = window.location.pathname.replace(/\/$/, '') || '/';
-  document.querySelectorAll('.nav-link').forEach((link) => {
-    const href = (link.getAttribute('href') || '').replace(/\/$/, '') || '/';
-    const match = href === '/' ? path === '/' : path === href || path.startsWith(href + '/');
-    if (match) link.setAttribute('aria-current', 'page');
-  });
-}
-
-function initEmailObfuscation() {
-  document.querySelectorAll('[data-email]').forEach((el) => {
-    const raw = el.dataset.email;
-    if (!raw) return;
-    const atIndex = raw.lastIndexOf('|');
-    if (atIndex === -1) return;
-    const email = raw.slice(0, atIndex) + '@' + raw.slice(atIndex + 1);
-    if (el.tagName === 'A') {
-      el.href = `mailto:${email}`;
-      const label = el.dataset.emailLabel;
-      if (label && !el.querySelector('svg, img')) {
-        // Lien texte simple — on peut remplacer le contenu
-        el.textContent = label;
-      }
-      // Si SVG présent (bouton CTA) : on met à jour href seulement, les enfants sont préservés
-    } else {
-      el.textContent = email;
-    }
-  });
-}
-
-function initFooterYear() {
-  const el = document.getElementById('footer-year');
-  if (el) el.textContent = new Date().getFullYear();
-}
-
-function initTitleAnimations() {
-  const titles = document.querySelectorAll('main h1, main h2');
-  if (!('IntersectionObserver' in window)) {
-    titles.forEach(el => el.classList.add('anim-visible'));
-    return;
+  /* En-tête : ombre après défilement */
+  const entete = $('#entete');
+  if (entete) {
+    const maj = () => entete.classList.toggle('defile', scrollY > 8);
+    addEventListener('scroll', maj, { passive: true });
+    maj();
   }
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('anim-visible');
-        obs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
-  titles.forEach((el, i) => {
-    el.classList.add('anim-title');
-    el.style.transitionDelay = `${Math.min(i % 3, 2) * 80}ms`;
-    obs.observe(el);
+  /* Menu mobile */
+  const burger = $('#burger');
+  const navMobile = $('#nav-mobile');
+  if (burger && navMobile) {
+    const bascule = (ouvrir) => {
+      burger.setAttribute('aria-expanded', String(ouvrir));
+      burger.setAttribute('aria-label', ouvrir ? 'Fermer le menu' : 'Ouvrir le menu');
+      navMobile.dataset.ouvert = String(ouvrir);
+      document.body.classList.toggle('menu-ouvert', ouvrir);
+    };
+    burger.addEventListener('click', () => bascule(burger.getAttribute('aria-expanded') !== 'true'));
+    addEventListener('keydown', (e) => { if (e.key === 'Escape' && navMobile.dataset.ouvert === 'true') { bascule(false); burger.focus(); } });
+  }
+
+  /* Menus déroulants : ouverture au clavier, état aria */
+  $$('.nav__item--menu').forEach((item) => {
+    const lien = $('[aria-expanded]', item);
+    if (!lien) return;
+    const poser = (v) => lien.setAttribute('aria-expanded', String(v));
+    item.addEventListener('mouseenter', () => poser(true));
+    item.addEventListener('mouseleave', () => poser(false));
+    item.addEventListener('focusin', () => poser(true));
+    item.addEventListener('focusout', (e) => { if (!item.contains(e.relatedTarget)) poser(false); });
   });
-}
+
+  /* Lien de la page courante */
+  const chemin = location.pathname.replace(/\/$/, '') || '/';
+  $$('.nav__lien, .nav__menu a').forEach((a) => {
+    const h = (a.getAttribute('href') || '').replace(/\/$/, '') || '/';
+    if (h !== '/' && (chemin === h || chemin.startsWith(h + '/'))) a.setAttribute('aria-current', 'page');
+  });
+
+  /* Adresse mail recomposée (jamais en clair dans le HTML) */
+  const parts = ['lafeemenage6', 'gmail.com'];
+  const mail = parts.join('@');
+  $$('[data-mail]').forEach((a) => {
+    a.href = 'mailto:' + mail;
+    if (a.dataset.mailLabel !== undefined && !a.dataset.mailLabel) a.textContent = mail;
+  });
+  $$('[data-mail-texte]').forEach((el) => { el.textContent = mail; });
+
+  /* Année du pied de page */
+  $$('[data-annee]').forEach((el) => { el.textContent = String(new Date().getFullYear()); });
+
+  /* Apparitions à l'entrée dans l'écran */
+  const reveals = $$('.reveal');
+  if (reveals.length) {
+    if (reduit || !('IntersectionObserver' in window)) reveals.forEach((el) => el.classList.add('visible'));
+    else {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      reveals.forEach((el) => io.observe(el));
+    }
+  }
+
+  /* La maison pièce par pièce : la fiche au centre de l'écran allume sa pièce */
+  const fiches = $$('.fiche[data-piece]');
+  if (fiches.length) {
+    const svg = $('.maison__svg');
+    const legende = $('[data-legende]');
+    const legendeOu = $('[data-legende-ou]');
+    const pieces = new Map($$('.piece[data-piece]', svg).map((g) => [g.dataset.piece, g]));
+    const allumer = (id) => {
+      pieces.forEach((g, k) => g.classList.toggle('allumee', k === id));
+      fiches.forEach((f) => f.classList.toggle('active', f.dataset.piece === id));
+      const f = fiches.find((x) => x.dataset.piece === id);
+      if (f && legende) { legende.textContent = $('h3', f).firstChild.textContent.trim(); legendeOu.textContent = $('h3 small', f).textContent; }
+    };
+    allumer(fiches[0].dataset.piece);
+    if ('IntersectionObserver' in window) {
+      // Bande étroite au milieu de l'écran : la fiche qui la traverse est la fiche active.
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => { if (e.isIntersecting) allumer(e.target.dataset.piece); });
+      }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
+      fiches.forEach((f) => io.observe(f));
+    }
+    fiches.forEach((f) => f.addEventListener('click', () => allumer(f.dataset.piece)));
+  }
+
+  /* Barre mobile : se cache quand le formulaire de devis est visible */
+  const barre = $('#barre-mobile');
+  const formDevis = $('#devis');
+  if (barre && formDevis && 'IntersectionObserver' in window) {
+    new IntersectionObserver((entries) => {
+      entries.forEach((e) => barre.classList.toggle('cachee', e.isIntersecting));
+    }, { threshold: 0.15 }).observe(formDevis);
+  }
+
+  /* Formulaire du hero : commune vers la page contact, ou vers la page ville si elle existe */
+  const villes = { melrand: '/melrand/', pontivy: '/pontivy/', lorient: '/lorient/', auray: '/auray/', vannes: '/vannes/' };
+  $$('[data-commune-form]').forEach((form) => {
+    form.addEventListener('submit', (e) => {
+      const v = ($('input[name=commune]', form).value || '').trim();
+      const cle = v.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+      if (villes[cle]) { e.preventDefault(); location.href = villes[cle] + '#demande'; }
+      else if (v) { e.preventDefault(); location.href = '/contact/?commune=' + encodeURIComponent(v) + '#devis'; }
+    });
+  });
+
+  /* Formulaire de devis : préremplissage depuis l'adresse, horodatage, envoi */
+  if (formDevis) {
+    const q = new URLSearchParams(location.search);
+    const commune = $('input[name=commune]', formDevis);
+    const prestation = $('select[name=prestation]', formDevis);
+    if (q.get('commune') && commune && !commune.value) commune.value = q.get('commune');
+    if (q.get('prestation') && prestation) prestation.value = q.get('prestation');
+    const depuis = $('input[name=depuis]', formDevis);
+    if (depuis) depuis.value = String(Date.now());
+    const retour = $('.formulaire__retour', formDevis);
+    const bouton = $('button[type=submit]', formDevis);
+    const dire = (etat, texte) => { retour.dataset.etat = etat; retour.textContent = texte; };
+
+    formDevis.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const nom = $('input[name=nom]', formDevis).value.trim();
+      const tel = $('input[name=tel]', formDevis).value.trim();
+      const courriel = $('input[name=mail]', formDevis).value.trim();
+      if (!nom || !commune.value.trim()) return dire('erreur', 'Votre nom et votre commune suffisent pour commencer.');
+      if (!tel && !courriel) return dire('erreur', 'Indiquez un téléphone ou un e-mail pour que Florence puisse vous répondre.');
+      bouton.disabled = true;
+      try {
+        const res = await fetch(formDevis.action, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(Object.fromEntries(new FormData(formDevis))) });
+        if (res.ok) { dire('ok', 'Demande envoyée. Florence vous répond sous 24 h, souvent le jour même.'); formDevis.reset(); }
+        else if (res.status === 503) ouvrirMessagerie();
+        else { const j = await res.json().catch(() => ({})); dire('erreur', j.erreur || "L'envoi n'a pas abouti. Vous pouvez appeler le 06 41 84 36 34."); }
+      } catch { ouvrirMessagerie(); }
+      bouton.disabled = false;
+    });
+
+    // Repli si le service d'envoi n'est pas disponible : la messagerie du visiteur s'ouvre, préremplie.
+    function ouvrirMessagerie() {
+      const d = Object.fromEntries(new FormData(formDevis));
+      const corps = `Bonjour Florence,\n\nNom : ${d.nom}\nCommune : ${d.commune}\nTéléphone : ${d.tel || '-'}\nE-mail : ${d.mail || '-'}\nBesoin : ${d.prestation || 'à définir'}\n\n${d.message || ''}`;
+      location.href = 'mailto:' + mail + '?subject=' + encodeURIComponent('Demande de devis, ' + d.commune) + '&body=' + encodeURIComponent(corps);
+      dire('ok', "Votre messagerie s'ouvre avec la demande préremplie. Si ce n'est pas le cas, appelez le 06 41 84 36 34.");
+    }
+  }
+
+  /* Avant / après */
+  $$('.avant-apres').forEach((bloc) => {
+    const r = $('input[type=range]', bloc);
+    if (!r) return;
+    const maj = () => bloc.style.setProperty('--pos', r.value + '%');
+    r.addEventListener('input', maj); maj();
+  });
+})();

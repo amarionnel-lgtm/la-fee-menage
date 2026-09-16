@@ -1,0 +1,10 @@
+{
+  "name": "la-fee-menage",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs && node scripts/csp.mjs",
+    "securite": "node scripts/build.mjs && node scripts/csp.mjs --ecrire",
+    "dev": "node scripts/build.mjs && npx serve dist -l 4173"
+  }
+}

@@ -1,0 +1,105 @@
+// Pages villes : textes locaux repris de la v1, structure refaite.
+export const villes = [
+  {
+    slug: "pontivy",
+    nom: "Pontivy",
+    temps: "≈ 25 min",
+    km: "20 km",
+    titre: "Nettoyage à Pontivy et Centre-Morbihan",
+    description: "Nettoyage professionnel à Pontivy et Centre-Morbihan (Noyal-Pontivy, Pluméliau, Cléguérec) : ménage régulier, bureaux, remise en état, fin de chantier, vitres, Diogène. Devis gratuit.",
+    h1: "Nettoyage à <em>Pontivy</em> et en Centre-Morbihan",
+    intro: [
+      "Pontivy est la ville la plus proche de chez moi : une vingtaine de kilomètres depuis Melrand, vingt-cinq minutes de route. C'est ma zone d'intervention la plus active. Je connais la ville : la cité médiévale autour du château des Rohan, les quartiers napoléoniens, les zones pavillonnaires de Noyal-Pontivy.",
+      "Particuliers, commerçants, artisans, syndics : je réponds à toutes les demandes de nettoyage à Pontivy et dans un rayon de trente kilomètres, avec des produits écologiques et une seule interlocutrice du premier appel à la fin du chantier.",
+    ],
+    couvertes: ["Pontivy centre", "Noyal-Pontivy", "Pluméliau-Bieuzy", "Cléguérec", "Saint-Gérand", "Guémené-sur-Scorff", "Pleugriffet", "Loudéac (22)"],
+    faq: [
+      ["Êtes-vous disponible rapidement à Pontivy ?", "Oui, Pontivy est ma zone prioritaire, à vingt-cinq minutes de Melrand. Je réponds sous 24 heures et je peux généralement intervenir dans les 48 heures. Pour une urgence, précisez votre contrainte dans le message."],
+      ["Intervenez-vous autour de Pontivy ?", "Oui : Noyal-Pontivy, Pluméliau-Bieuzy, Cléguérec, Pleugriffet, Saint-Gérand, Guémené-sur-Scorff et les communes voisines. Indiquez votre commune dans la demande de devis."],
+      ["Pouvez-vous nettoyer un local commercial ou un atelier à Pontivy ?", "Oui. Bureaux, commerces, ateliers, salles de réunion : j'adapte les produits et la méthode aux surfaces et à l'activité. Devis gratuit sur demande."],
+      ["Proposez-vous des passages réguliers à Pontivy ?", "Oui. Contrats hebdomadaires, bimensuels ou mensuels pour les particuliers et les professionnels, avec les jours, les tâches et le tarif fixés pour l'année."],
+    ],
+  },
+  {
+    slug: "lorient",
+    nom: "Lorient",
+    temps: "≈ 45 min",
+    km: "45 km",
+    titre: "Nettoyage à Lorient et dans l'agglomération",
+    description: "Nettoyage professionnel à Lorient, Lanester, Hennebont, Ploemeur, Guidel : ménage régulier, bureaux, copropriétés, remise en état, fin de chantier, vitres. Devis gratuit sous 24 h.",
+    h1: "Nettoyage à <em>Lorient</em> et dans l'agglomération",
+    intro: [
+      "J'interviens à Lorient et dans toute l'agglomération, Lanester, Hennebont, Ploemeur, Guidel, Larmor-Plage, pour les particuliers comme pour les entreprises. Quarante-cinq minutes de route depuis Melrand, un trajet que je fais chaque semaine.",
+      "Entre les appartements réhabilités du centre reconstruit, les immeubles récents de la rive droite et les bureaux du quartier de la base, les besoins sont variés : ménage régulier, parties communes, remise en état entre deux locataires, fin de chantier, vitres.",
+    ],
+    couvertes: ["Lorient centre", "Lanester", "Hennebont", "Ploemeur", "Guidel", "Larmor-Plage", "Quéven", "Caudan"],
+    faq: [
+      ["Intervenez-vous à Lanester et dans l'agglomération de Lorient ?", "Oui, sur toute l'agglomération : Lorient, Lanester, Hennebont, Ploemeur, Guidel, Larmor-Plage et les communes voisines. Précisez votre commune dans la demande."],
+      ["Proposez-vous des contrats d'entretien pour les entreprises à Lorient ?", "Oui. Contrats hebdomadaires, bimensuels ou mensuels pour les bureaux et locaux professionnels. Le contrat fixe les jours, la durée et les tâches."],
+      ["Quel délai pour un devis à Lorient ?", "Je réponds sous 24 heures, souvent le jour même. Décrivez votre besoin, la surface approximative et vos disponibilités."],
+      ["Prenez-vous en charge le nettoyage extrême à Lorient ?", "Oui : syndrome de Diogène, accumulation, logement après décès. Ces interventions sont traitées avec une discrétion totale et sans jugement."],
+    ],
+  },
+  {
+    slug: "auray",
+    nom: "Auray",
+    temps: "≈ 45 min",
+    km: "40 km",
+    titre: "Nettoyage à Auray et dans le pays d'Auray",
+    description: "Nettoyage à Auray, Sainte-Anne-d'Auray, Pluvigner, Carnac : gîtes et locations saisonnières, résidences secondaires, ménage régulier, remise en état, vitres, terrasses. Devis gratuit.",
+    h1: "Nettoyage à <em>Auray</em> et dans le pays d'Auray",
+    intro: [
+      "Auray et son pays, Pluvigner, Brec'h, Sainte-Anne-d'Auray, Carnac et jusqu'à la presqu'île de Quiberon, font partie de mes zones d'intervention régulières, à quarante-cinq minutes de Melrand.",
+      "Le port de Saint-Goustan, les maisons de caractère et l'activité touristique créent des besoins précis : remise en état entre deux locations, nettoyage de fin de saison, ouverture et fermeture des résidences secondaires. Je m'organise sur ces rythmes, avec un planning établi pour toute la saison.",
+    ],
+    couvertes: ["Auray et Saint-Goustan", "Sainte-Anne-d'Auray", "Pluvigner", "Brec'h", "Carnac", "Baden", "Pluneret", "Quiberon"],
+    faq: [
+      ["Intervenez-vous jusqu'à Carnac et Quiberon ?", "Oui, selon la demande. Le déplacement est plus long, indiquez votre localisation pour que le devis l'intègre."],
+      ["Pouvez-vous remettre en état un gîte entre deux séjours ?", "Oui, c'est une prestation régulière dans le pays d'Auray : nettoyage après le départ, préparation avant l'arrivée, linge si vous le fournissez, contrôle visuel. Un planning peut couvrir toute la saison."],
+      ["Gérez-vous l'ouverture et la fermeture des résidences secondaires ?", "Oui : dépoussiérage complet, cuisine et salle de bain, vitres, protection ou déprotection du mobilier extérieur, en début et en fin de saison."],
+      ["Quel délai pour un devis à Auray ?", "Je réponds sous 24 heures. Pour une date limite liée à un état des lieux ou à l'arrivée de locataires, mentionnez-la, je fais mon possible pour m'adapter."],
+    ],
+  },
+  {
+    slug: "vannes",
+    nom: "Vannes",
+    temps: "≈ 55 min",
+    km: "55 km",
+    titre: "Nettoyage à Vannes et autour du golfe",
+    description: "Nettoyage professionnel à Vannes, Séné, Saint-Avé, Arradon : ménage régulier, bureaux, remise en état, résidences secondaires, vitres, fin de chantier. Devis gratuit sous 24 h.",
+    h1: "Nettoyage à <em>Vannes</em> et autour du golfe",
+    intro: [
+      "Vannes mêle vieille ville, quartiers résidentiels et zones d'activité. J'interviens à Vannes et dans son agglomération, Séné, Theix-Noyalo, Saint-Avé, Arradon, Baden, à un peu moins d'une heure de Melrand.",
+      "Propriétaire bailleur avec un logement à remettre en état, dirigeant d'une PME de la zone de Laroiseau, particulier avec une maison au bord du golfe : je m'adapte à chaque situation. Les produits sont biodégradables, ce qui compte à proximité d'un site naturel protégé.",
+    ],
+    couvertes: ["Vannes centre historique", "Séné", "Theix-Noyalo", "Saint-Avé", "Arradon", "Baden", "Plescop", "Ploeren"],
+    faq: [
+      ["Intervenez-vous à Séné, Arradon et autour de Vannes ?", "Oui : Séné, Theix-Noyalo, Saint-Avé, Arradon, Baden, Plescop, Pluneret et les alentours. Le déplacement est inclus dans le devis."],
+      ["Un appartement en centre historique avec un accès difficile, c'est possible ?", "Oui. Accès étroits, escaliers, pas d'ascenseur : j'adapte le matériel et l'organisation. Précisez la configuration dans la demande."],
+      ["Intervenez-vous dans les résidences secondaires du golfe ?", "Oui, c'est fréquent : nettoyage avant votre arrivée ou après votre départ, organisation possible à distance."],
+      ["Quel délai d'intervention à Vannes ?", "Réponse sous 24 heures et date d'intervention généralement sous 48 à 72 heures. Pour une urgence, précisez votre contrainte."],
+    ],
+  },
+  {
+    slug: "melrand",
+    nom: "Melrand",
+    temps: "siège",
+    km: "0 km",
+    titre: "Nettoyage à Melrand et dans les communes voisines",
+    description: "La Fée Ménage est installée à Melrand (56310). Nettoyage à Melrand, Pluméliau, Cléguérec, Bubry, Saint-Barthélemy : ménage régulier, remise en état, vitres, terrasses. Pas de frais de déplacement.",
+    h1: "Nettoyage à <em>Melrand</em>, là où je suis installée",
+    intro: [
+      "Melrand, c'est chez moi. Je suis installée au 38 Kerlay et c'est de là que je pars chaque matin. Pour Melrand et les communes limitrophes, Pluméliau-Bieuzy, Cléguérec, Bubry, Saint-Barthélemy, Guémené-sur-Scorff, il n'y a pas de frais de déplacement.",
+      "Le Centre-Morbihan, ce sont des maisons individuelles, des fermes et des longères rénovées, des pavillons récents. Je connais ces logements : grands volumes, pièces de service, dépendances, terrasses en granit.",
+    ],
+    couvertes: ["Melrand", "Pluméliau-Bieuzy", "Cléguérec", "Bubry", "Saint-Barthélemy", "Guémené-sur-Scorff", "Baud", "Quistinic"],
+    faq: [
+      ["Y a-t-il des frais de déplacement à Melrand ?", "Non, ni pour Melrand ni pour ses abords immédiats (Pluméliau, Cléguérec, Bubry, Saint-Barthélemy). Au-delà, un forfait kilométrique peut s'appliquer, toujours précisé dans le devis."],
+      ["Pouvez-vous nettoyer une longère ou un corps de ferme rénové ?", "Oui. Grandes surfaces, matériaux anciens (granit, ardoise, tomettes), configurations atypiques : j'adapte produits et méthodes à chaque surface."],
+      ["Acceptez-vous les petites interventions ponctuelles ?", "Oui : une pièce après travaux, des vitres après une tempête, une terrasse avant un événement. Il n'y a pas de minimum de surface."],
+      ["Travaillez-vous avec les associations et la commune ?", "Oui. Locaux associatifs, salles municipales, structures collectives : je peux établir un devis adapté."],
+    ],
+  },
+];
+
+export const parSlug = Object.fromEntries(villes.map((v) => [v.slug, v]));
