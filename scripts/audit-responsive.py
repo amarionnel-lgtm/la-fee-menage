@@ -24,12 +24,24 @@ BASE = (sys.argv[1] if len(sys.argv) > 1 else "http://localhost:4322").rstrip("/
 PAGES = [
     ("/", "accueil"),
     ("/services/menage-entretien-regulier-morbihan/", "prestation principale"),
-    ("/services/nettoyage-syndrome-diogene-morbihan/", "prestation + étapes"),
+    ("/services/nettoyage-bureaux-morbihan/", "prestation"),
+    ("/services/nettoyage-coproprietes-morbihan/", "prestation"),
     ("/services/nettoyage-vitres-morbihan/", "prestation"),
+    ("/services/nettoyage-terrasse-morbihan/", "prestation"),
+    ("/services/nettoyage-demenagement-morbihan/", "prestation"),
+    ("/services/nettoyage-fin-de-chantier-morbihan/", "prestation"),
+    ("/services/nettoyage-syndrome-diogene-morbihan/", "prestation + étapes"),
     ("/pontivy/", "ville"),
+    ("/lorient/", "ville"),
+    ("/auray/", "ville"),
+    ("/vannes/", "ville"),
+    ("/melrand/", "ville"),
     ("/morbihan/", "carte"),
     ("/a-propos/", "à propos"),
     ("/contact/", "contact + formulaire"),
+    ("/contact/?commune=Pontivy&prestation=Nettoyage+extr%C3%AAme+et+syndrome+de+Diog%C3%A8ne", "contact prérempli"),
+    ("/mentions-legales/", "texte long"),
+    ("/cette-page-n-existe-pas/", "404"),
 ]
 
 LARGEURS = [
@@ -37,12 +49,21 @@ LARGEURS = [
     (375, "iPhone SE"),
     (390, "iPhone 15"),
     (430, "iPhone Pro Max"),
+    (599, "sous le point 600"),
+    (600, "au-dessus du point 600"),
+    (767, "sous le point 768"),
     (768, "iPad portrait"),
-    (1024, "iPad paysage"),
+    (844, "téléphone en paysage"),
+    (899, "sous le point 900"),
+    (900, "au-dessus du point 900"),
+    (1023, "sous le point 1024, menu mobile"),
+    (1024, "iPad paysage, menu bureau"),
+    (1080, "seuil tactile"),
     (1180, "petit portable"),
     (1280, "portable"),
     (1440, "portable large"),
     (1920, "grand écran"),
+    (2560, "très grand écran"),
 ]
 
 MESURE = """

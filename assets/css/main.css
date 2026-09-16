@@ -234,13 +234,19 @@ strong { font-weight: 700; }
 .nav-mobile__groupe:first-child { border-top: 0; }
 .nav-mobile__titre { font-size: var(--t-xs); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--c-magenta-texte); margin-bottom: var(--s-2); }
 .nav-mobile a { display: block; padding: 10px 0; color: var(--c-text); font-weight: 600; text-decoration: none; }
-.nav-mobile__deux { display: grid; grid-template-columns: 1fr 1fr; column-gap: var(--s-4); }
+.nav-mobile__deux { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr)); column-gap: var(--s-4); }
 body.menu-ouvert { overflow: hidden; }
 
+.entete-site__cta { display: none; }
 @media (max-width: 1023px) {
   .nav { display: none; }
   .burger { display: flex; }
   .logo__nom { font-size: 1.6rem; }
+  .entete-site__droite { display: flex; align-items: center; gap: var(--s-2); }
+}
+/* Tablettes : le bouton devis reste visible à côté du menu, la barre basse n'existe qu'au téléphone */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .entete-site__cta { display: inline-flex; }
 }
 
 /* === BARRE MOBILE FIXE ===================================== */
@@ -302,21 +308,36 @@ body.menu-ouvert { overflow: hidden; }
 .commune-form input::placeholder { color: var(--c-text-2); font-weight: 500; }
 .commune-form input:focus { outline: none; border-color: var(--c-prune); box-shadow: 0 0 0 4px rgba(142, 58, 111, .12); }
 
+/* Tablettes et téléphones en paysage : deux colonnes serrées, la photo garde sa place à droite */
+@media (max-width: 1279px) {
+  .hero__fee { width: 32%; left: -6%; top: -6%; }
+}
 @media (max-width: 899px) {
-  .hero__inner { grid-template-columns: 1fr; }
-  .hero__visuel { order: -1; max-width: 460px; }
-  .hero__fee { width: 34%; top: -6%; left: -8%; }
-  .hero__etiquette { right: 0; bottom: -12px; }
+  .hero__inner { grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 40px); align-items: start; }
+  .hero h1 { font-size: clamp(1.9rem, 1.2rem + 3vw, 2.6rem); }
+  .hero .lead { font-size: var(--t-base); }
+  .hero__photo { aspect-ratio: 4 / 5; }
+  .hero__fee { width: 34%; top: -4%; left: -4%; }
+  .hero__etiquette { right: 0; bottom: -12px; padding: var(--s-2) var(--s-3); }
   .hero__faits { gap: var(--s-2) var(--s-5); margin-top: var(--s-8); }
+  .commune-form { flex-direction: column; }
+  .commune-form .btn { width: 100%; }
+}
+/* Téléphones en portrait : la photo d'abord, en pleine largeur */
+@media (max-width: 699px) {
+  .hero { padding-top: var(--s-4); }
+  .hero__inner { grid-template-columns: 1fr; }
+  .hero__visuel { order: -1; }
+  .hero__photo { aspect-ratio: 4 / 3.2; }
+  .hero__tache { inset: 8% 0 -6% 8%; }
+  .hero__fee { width: 30%; top: -5%; left: 0; }
+  .hero h1 { font-size: var(--t-h1); }
+  .hero .lead { font-size: var(--t-lg); }
 }
 @media (max-width: 599px) {
-  .hero { padding-top: var(--s-4); }
-  .hero__tache { inset: 8% 0 -6% 8%; }
   .zones__liste a { grid-template-columns: 1fr auto; }
   .zones__liste .temps { grid-column: 1; text-align: left; }
   .zones__liste svg { grid-row: 1 / span 2; }
-  .hero__visuel { max-width: none; }
-  .hero__photo { aspect-ratio: 4 / 3.4; }
   .commune-form { flex-direction: column; }
   .commune-form .btn { width: 100%; }
 }
@@ -369,6 +390,9 @@ body.menu-ouvert { overflow: hidden; }
 .fiche__note i { width: 12px; height: 2px; background: var(--c-magenta); border-radius: 2px; }
 .fiche__note i.rond { width: 10px; height: 10px; background: var(--c-vert); border-radius: 50%; }
 
+@media (max-height: 520px) {
+  .maison__colle { position: static; }
+}
 @media (max-width: 899px) {
   .maison__inner { grid-template-columns: 1fr; }
   .maison__colle { top: var(--header-h); z-index: 2; background: var(--c-bg); padding-block: var(--s-3); margin-inline: calc(-1 * var(--gutter)); padding-inline: var(--gutter); }

@@ -43,7 +43,7 @@ export function layout({ path, titre, description, corps, schema = [], classe = 
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>${esc(titre)}</title>
   <meta name="description" content="${esc(description)}">
   <link rel="canonical" href="${url}">
@@ -113,7 +113,10 @@ export function header(path = '/') {
       </ul>
       <a href="/contact/#devis" class="btn btn--primaire btn--petit nav__cta">Demander un devis</a>
     </nav>
-    <button class="burger" id="burger" aria-expanded="false" aria-controls="nav-mobile" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+    <div class="entete-site__droite">
+      <a href="/contact/#devis" class="btn btn--primaire btn--petit entete-site__cta">Demander un devis</a>
+      <button class="burger" id="burger" aria-expanded="false" aria-controls="nav-mobile" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+    </div>
   </div>
   <nav class="nav-mobile" id="nav-mobile" data-ouvert="false" aria-label="Navigation mobile">
     <div class="container">
