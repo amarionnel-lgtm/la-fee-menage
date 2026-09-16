@@ -77,6 +77,7 @@ ${corps}
   ${footer()}
   ${barreMobile()}
   <script src="/assets/js/main.js" defer></script>
+  ${process.env.TURNSTILE_SITE_KEY ? '<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>' : ''}
 </body>
 </html>
 `;
@@ -214,6 +215,7 @@ export function formulaireDevis({ commune = '', prestation = '' } = {}) {
       <div class="champ"><label for="f-message">Quelques mots sur le lieu <small>surface, fréquence souhaitée, date, ce qui compte pour vous</small></label><textarea id="f-message" name="message" maxlength="2000"></textarea></div>
       <div class="champ champ--piege" aria-hidden="true"><label for="f-site">Site web</label><input id="f-site" name="site" type="text" tabindex="-1" autocomplete="off"></div>
       <input type="hidden" name="depuis" value="">
+      ${process.env.TURNSTILE_SITE_KEY ? `<div class="cf-turnstile" data-sitekey="${process.env.TURNSTILE_SITE_KEY}" data-theme="light" data-language="fr"></div>` : ''}
       <div class="formulaire__pied">
         <p class="petit">Réponse sous 24 h, souvent le jour même. Aucune donnée n'est conservée ailleurs que dans la messagerie de Florence.</p>
         <button type="submit" class="btn btn--primaire">Envoyer ma demande ${svg.fleche}</button>

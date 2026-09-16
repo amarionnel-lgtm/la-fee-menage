@@ -29,17 +29,26 @@ for (const f of pages) {
   }
 }
 
+// Turnstile (captcha discret) n'est autorisé dans la CSP que si la clé de site est
+// configurée : sans clé, aucune ressource tierce n'est admise.
+const turnstile = !!process.env.TURNSTILE_SITE_KEY;
 const csp = [
   "default-src 'none'",
-  `script-src 'self'${hachages.size ? ' ' + [...hachages].sort().join(' ') : ''}`,
+  `script-src 'self'${hachages.size ? ' ' + [...hachages].sort().join(' ') : ''}${turnstile ? ' https://challenges.cloudflare.com' : ''}`,
   "style-src 'self'",
   "img-src 'self' data:",
   "font-src 'self'",
   "connect-src 'self'",
+  `frame-src ${turnstile ? 'https://challenges.cloudflare.com' : "'none'"}`,
+  "worker-src 'none'",
+  "manifest-src 'none'",
+  "media-src 'none'",
   "form-action 'self'",
   "base-uri 'none'",
   "frame-ancestors 'none'",
   "object-src 'none'",
+  // Trusted Types : coupe les injections DOM ; retiré si Turnstile est présent (script tiers non garanti compatible).
+  ...(turnstile ? [] : ["require-trusted-types-for 'script'"]),
   'upgrade-insecure-requests',
 ].join('; ');
 
@@ -49,11 +58,12 @@ const securite = [
   { key: 'X-Content-Type-Options', value: 'nosniff' },
   { key: 'X-Frame-Options', value: 'DENY' },
   { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
-  { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()' },
+  { key: 'Permissions-Policy', value: 'accelerometer=(), autoplay=(), camera=(), display-capture=(), encrypted-media=(), fullscreen=(self), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), serial=(), usb=(), xr-spatial-tracking=(), interest-cohort=(), browsing-topics=()' },
   { key: 'Cross-Origin-Opener-Policy', value: 'same-origin' },
   { key: 'Cross-Origin-Resource-Policy', value: 'same-origin' },
   { key: 'X-DNS-Prefetch-Control', value: 'off' },
   { key: 'Origin-Agent-Cluster', value: '?1' },
+  { key: 'X-Permitted-Cross-Domain-Policies', value: 'none' },
 ];
 
 const config = {
@@ -67,10 +77,11 @@ const config = {
     { source: '/(.*)', headers: securite },
     // Les polices ne changent jamais sous le même nom : cache long.
     { source: '/assets/fonts/(.*)', headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }] },
-    { source: '/assets/images/(.*)', headers: [{ key: 'Cache-Control', value: 'public, max-age=2592000' }] },
+    // Images au nom stable : jamais immutable, sinon une photo remplacée reste l'ancienne chez les visiteurs.
+    { source: '/assets/images/(.*)', headers: [{ key: 'Cache-Control', value: 'public, max-age=3600, must-revalidate' }] },
     // CSS et JS sans condensat dans le nom : jamais immutable (voir ERRORS.md).
     { source: '/assets/(css|js)/(.*)', headers: [{ key: 'Cache-Control', value: 'public, max-age=0, must-revalidate' }] },
-    { source: '/api/(.*)', headers: [{ key: 'Cache-Control', value: 'no-store' }] },
+    { source: '/api/(.*)', headers: [{ key: 'Cache-Control', value: 'no-store' }, { key: 'X-Robots-Tag', value: 'noindex' }] },
   ],
   redirects: [
     { source: '/(.*)', has: [{ type: 'host', value: 'la-fee-menage.fr' }], destination: 'https://www.la-fee-menage.fr/$1', permanent: true },
