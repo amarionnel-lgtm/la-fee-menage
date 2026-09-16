@@ -1,0 +1,13 @@
+# Fichiers de travail, jamais servis en ligne
+.git
+.gitignore
+.vercel
+.claude
+.DS_Store
+**/.DS_Store
+START.md
+PIPELINE.md
+README.md
+*.md
+.security-reviewed
+.vercelignore
