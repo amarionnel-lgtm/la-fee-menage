@@ -75,6 +75,9 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
+User-agent: Bingbot
+Allow: /
+
 Sitemap: ${site.url}/sitemap.xml
 `);
 

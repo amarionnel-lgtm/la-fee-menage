@@ -1,6 +1,6 @@
 import { site, communes, svg } from '../site.mjs';
 import { prestations } from '../data/prestations.mjs';
-import { layout, ariane, arianeSchema, faq, faqSchema, sectionDevis, entrepriseSchema, sansBalises } from '../partials.mjs';
+import { layout, ariane, arianeSchema, faq, faqSchema, sectionDevis, entrepriseSchema, sansBalises, lierCommunes, lierPrestations } from '../partials.mjs';
 
 function page(p, i) {
   const autres = prestations.filter((x) => x.slug !== p.slug).slice(0, 4);
@@ -38,7 +38,7 @@ function page(p, i) {
       <div class="container florence">
         <div class="prose">
           <h2 id="inclus-titre">Que comprend ${p.discret ? "l'intervention" : 'la prestation'} ?</h2>
-          <p>${p.intro[1]}</p>
+          <p>${lierPrestations(lierCommunes(p.intro[1]), p.slug)}</p>
         </div>
         <ul class="fiche active" role="list" aria-label="Liste détaillée">
           ${p.inclus.map((l) => `<li>${l}</li>`).join('')}

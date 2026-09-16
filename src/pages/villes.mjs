@@ -1,7 +1,7 @@
 import { site, communes, svg } from '../site.mjs';
 import { villes } from '../data/villes.mjs';
 import { prestations } from '../data/prestations.mjs';
-import { layout, ariane, arianeSchema, faq, faqSchema, sectionDevis, entrepriseSchema } from '../partials.mjs';
+import { layout, ariane, arianeSchema, faq, faqSchema, sectionDevis, entrepriseSchema, lierCommunes, lierPrestations } from '../partials.mjs';
 
 function page(v) {
   const fil = [['Accueil', '/'], ['Communes', '/morbihan/'], [v.nom, `/${v.slug}/`]];
@@ -22,7 +22,7 @@ function page(v) {
         <div>
           <p class="sur-titre">Communes couvertes</p>
           <div class="communes-voisines">${v.couvertes.map((c) => `<span>${svg.lieu} ${c}</span>`).join('')}</div>
-          <p class="petit zones__note">${v.intro[1]}</p>
+          <p class="petit zones__note">${lierPrestations(lierCommunes(v.intro[1], v.slug))}</p>
         </div>
       </div>
     </section>

@@ -17,6 +17,7 @@ export const site = {
     ['Dimanche', 'fermé'],
   ],
   avisUrl: 'https://g.page/r/ChIJO04JueNJEEgR9HvGzNV5fms/review',
+  ficheGoogle: 'https://g.page/r/ChIJO04JueNJEEgR9HvGzNV5fms',
   note: '5,0',
   nbAvis: 10,
   ogImage: '/assets/images/og-accueil.jpg',

@@ -1,5 +1,5 @@
 import { site, svg } from '../site.mjs';
-import { layout, ariane, arianeSchema, sectionDevis, entrepriseSchema } from '../partials.mjs';
+import { layout, ariane, arianeSchema, sectionDevis, entrepriseSchema, lierPrestations, lierCommunes } from '../partials.mjs';
 
 const fil = [['Accueil', '/'], ['Florence Marionnel', '/a-propos/']];
 const corps = `
@@ -33,7 +33,8 @@ const corps = `
           <h2 id="methode-titre">Comment je travaille</h2>
           <p>Chaque intervention commence par une visite. On fait le tour du lieu ensemble, on note pièce par pièce ce que vous attendez, et cette fiche devient la base du devis, puis de chaque passage. Vous savez exactement ce qui est fait, et je sais exactement ce que vous attendez.</p>
           <p>Je viens avec mon matériel et mes produits, écologiques et biodégradables, sans composé organique volatil. Après mon passage, ça ne sent pas le produit, ça sent le propre.</p>
-          <p>Je me suis formée pour les situations compliquées aussi : logements insalubres, syndrome de Diogène, fins de chantier. Ce sont des interventions qui demandent de la méthode et, avant tout, du respect pour les personnes.</p>
+          <p>${lierPrestations('Je me suis formée pour les situations compliquées aussi : logements insalubres, syndrome de Diogène, fins de chantier. Ce sont des interventions qui demandent de la méthode et, avant tout, du respect pour les personnes.')}</p>
+          <p>${lierCommunes('Au quotidien, ce sont surtout des passages de ménage régulier chez des particuliers autour de Pontivy et de Lorient, des vitres, des parties communes et des remises en état entre deux locataires.')}</p>
         </div>
         <ul class="florence__faits" role="list">
           <li><b>Statut</b><span>Entreprise individuelle, SIRET ${site.siret}.</span></li>
@@ -66,7 +67,7 @@ export default {
   html: layout({
     path: '/a-propos/',
     titre: 'Florence Marionnel, fondatrice de La Fée Ménage à Melrand',
-    description: 'Florence Marionnel, La Fée Ménage à Melrand (Morbihan) : une seule interlocutrice, certifiée BGE et Certibiocides, produits écologiques, devis écrit après visite.',
+    description: 'Florence Marionnel, La Fée Ménage à Melrand (Morbihan) : une seule interlocutrice, certifiée BGE et Certibiocides, produits écologiques, devis après visite.',
     corps,
     schema: [entrepriseSchema(), { '@type': 'Person', name: site.proprietaire, jobTitle: 'Fondatrice', worksFor: { '@id': site.url + '/#entreprise' }, url: site.url + '/a-propos/' }, arianeSchema(fil)],
   }),

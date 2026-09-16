@@ -4,6 +4,35 @@ import { prestations } from './data/prestations.mjs';
 export const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 export const sansBalises = (s) => String(s).replace(/<[^>]+>/g, '');
 
+/* ---------- liens contextuels en pleine phrase ---------- */
+const motsPrestations = [
+  [/\bménage régulier\b|\bentretien régulier\b/i, 'menage-entretien-regulier-morbihan'],
+  [/\bbureaux\b/i, 'nettoyage-bureaux-morbihan'],
+  [/\bparties communes\b|\bcopropriétés?\b/i, 'nettoyage-coproprietes-morbihan'],
+  [/\bvitres\b/i, 'nettoyage-vitres-morbihan'],
+  [/\bterrasses?\b/i, 'nettoyage-terrasse-morbihan'],
+  [/\bremise en état\b|\bdéménagement\b/i, 'nettoyage-demenagement-morbihan'],
+  [/\bfins? de chantier\b/i, 'nettoyage-fin-de-chantier-morbihan'],
+  [/\bsyndrome de Diogène\b|\bnettoyage extrême\b/i, 'nettoyage-syndrome-diogene-morbihan'],
+];
+const motsCommunes = communes.map((c) => [new RegExp(`\\b${c.nom}\\b`), c.slug]);
+// Pose un lien sur la première occurrence de chaque expression, en évitant la page courante
+// et tout ce qui est déjà dans une balise.
+function lier(html, regles, prefixe, exclure) {
+  let out = html;
+  for (const [re, slug] of regles) {
+    if (slug === exclure) continue;
+    const m = re.exec(out);
+    if (!m) continue;
+    const avant = out.slice(0, m.index);
+    if ((avant.match(/<a\b/g) || []).length !== (avant.match(/<\/a>/g) || []).length) continue;
+    out = avant + `<a href="${prefixe}${slug}/">${m[0]}</a>` + out.slice(m.index + m[0].length);
+  }
+  return out;
+}
+export const lierPrestations = (html, exclure) => lier(html, motsPrestations, '/services/', exclure);
+export const lierCommunes = (html, exclure) => lier(html, motsCommunes, '/', exclure);
+
 /* ---------- gabarit de page ---------- */
 export function layout({ path, titre, description, corps, schema = [], classe = '', noindex = false, ogImage = site.ogImage }) {
   const url = site.url + path;
@@ -24,6 +53,10 @@ export function layout({ path, titre, description, corps, schema = [], classe = 
   <meta property="og:title" content="${esc(titre)}">
   <meta property="og:description" content="${esc(description)}">
   <meta property="og:image" content="${site.url}${ogImage}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Florence Marionnel devant sa camionnette La Fée Ménage">
+  <meta name="twitter:image" content="${site.url}${ogImage}">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="${site.nom}">
   <meta name="twitter:card" content="summary_large_image">
@@ -239,7 +272,12 @@ export function entrepriseSchema(extra = {}) {
     telephone: '+33641843634',
     taxID: site.siretBrut,
     address: { '@type': 'PostalAddress', streetAddress: site.adresse.rue, postalCode: site.adresse.cp, addressLocality: site.adresse.ville, addressRegion: 'Bretagne', addressCountry: 'FR' },
-    geo: { '@type': 'GeoCoordinates', latitude: 47.984, longitude: -3.106 },
+    geo: { '@type': 'GeoCoordinates', latitude: 47.946204, longitude: -3.087061 },
+    hasMap: 'https://www.google.com/maps/place/?q=place_id:ChIJO04JueNJEEgR9HvGzNV5fms',
+    sameAs: ['https://g.page/r/ChIJO04JueNJEEgR9HvGzNV5fms'],
+    knowsAbout: ['ménage à domicile', 'entretien régulier', 'nettoyage de bureaux', 'nettoyage de copropriétés', 'nettoyage de vitres', 'nettoyage de terrasses', 'remise en état de logement', 'nettoyage de fin de chantier', 'nettoyage extrême', 'syndrome de Diogène'],
+    foundingLocation: { '@type': 'Place', name: 'Melrand, Morbihan' },
+
     areaServed: [...communes.map((c) => ({ '@type': 'City', name: c.nom })), { '@type': 'AdministrativeArea', name: 'Morbihan' }],
     openingHoursSpecification: [
       { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '08:00', closes: '18:00' },
