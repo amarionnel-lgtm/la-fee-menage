@@ -81,12 +81,13 @@ if (process.argv.includes('--ecrire')) {
   writeFileSync('vercel.json', attendu);
   console.log(`vercel.json écrit (${hachages.size} hachage(s) de script inline).`);
 } else {
-  let actuel = '';
-  try { actuel = readFileSync('vercel.json', 'utf8'); } catch {}
-  if (actuel !== attendu) {
+  // Vercel peut reformater vercel.json avant le build : on compare le contenu, pas les octets.
+  let actuel = {};
+  try { actuel = JSON.parse(readFileSync('vercel.json', 'utf8')); } catch {}
+  const cle = (o) => JSON.stringify({ headers: o.headers, redirects: o.redirects, outputDirectory: o.outputDirectory, cleanUrls: o.cleanUrls, trailingSlash: o.trailingSlash });
+  if (cle(actuel) !== cle(config)) {
     console.error('vercel.json ne correspond pas au build. Lancer : node scripts/csp.mjs --ecrire');
-    const a = JSON.parse(actuel || '{}').headers?.[0]?.headers?.[0]?.value;
-    console.error('CSP actuelle  :', a); console.error('CSP attendue  :', csp);
+    console.error('CSP actuelle  :', actuel.headers?.[0]?.headers?.[0]?.value); console.error('CSP attendue  :', csp);
     process.exit(1);
   }
   console.log('vercel.json à jour.');
