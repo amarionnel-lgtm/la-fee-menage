@@ -102,6 +102,14 @@ ${villes.map((v) => `- [${v.nom}](${site.url}/${v.slug}/) : ${v.temps === 'sièg
 - [Contact et devis](${site.url}/contact/)
 `);
 
+// security.txt (RFC 9116) : qui prévenir en cas de faille
+mkdirSync(join(DIST, '.well-known'), { recursive: true });
+writeFileSync(join(DIST, '.well-known', 'security.txt'), `Contact: ${site.url}/contact/
+Preferred-Languages: fr
+Canonical: ${site.url}/.well-known/security.txt
+Expires: ${new Date(Date.now() + 365 * 864e5).toISOString()}
+`);
+
 // Contrôle : aucune adresse mail en clair, aucun attribut style=
 let erreurs = 0;
 (function parcourir(dir) {

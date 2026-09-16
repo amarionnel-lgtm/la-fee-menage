@@ -53,6 +53,7 @@ const securite = [
   { key: 'Cross-Origin-Opener-Policy', value: 'same-origin' },
   { key: 'Cross-Origin-Resource-Policy', value: 'same-origin' },
   { key: 'X-DNS-Prefetch-Control', value: 'off' },
+  { key: 'Origin-Agent-Cluster', value: '?1' },
 ];
 
 const config = {
