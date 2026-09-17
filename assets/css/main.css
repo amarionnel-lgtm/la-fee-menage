@@ -78,6 +78,7 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 body {
   background: var(--c-bg);
@@ -533,6 +534,12 @@ body.menu-ouvert { overflow: hidden; }
 .formulaire__retour[data-etat="erreur"] { display: block; background: var(--c-rose); color: var(--c-magenta-texte); }
 @media (max-width: 899px) { .devis { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 599px) { .formulaire__ligne { grid-template-columns: minmax(0, 1fr); } }
+
+/* Carte de contact (remplace le formulaire : le visiteur écrit depuis sa messagerie) */
+.carte-contact { background: #fff; border-radius: var(--r-chiffon); padding: clamp(24px, 3vw, 44px); box-shadow: var(--shadow-sm); display: grid; gap: var(--s-4); align-content: start; }
+.carte-contact__titre { font-family: var(--f-titre); font-weight: 500; font-size: var(--t-h3); color: var(--c-prune); }
+.carte-contact .btn { width: 100%; }
+.carte-contact__adresse { word-break: break-all; }
 
 /* === PIED DE PAGE ========================================== */
 

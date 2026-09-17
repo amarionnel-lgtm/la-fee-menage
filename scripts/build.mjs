@@ -40,7 +40,6 @@ ${indexables.map((p) => `  <url><loc>${site.url}${p.path}</loc><lastmod>${aujour
 writeFileSync(join(DIST, 'robots.txt'), process.env.SITE_PREVIEW ? 'User-agent: *\nDisallow: /\n' : `User-agent: *
 Allow: /
 Disallow: /mentions-legales/
-Disallow: /api/
 
 User-agent: GPTBot
 Allow: /

@@ -77,7 +77,6 @@ ${corps}
   ${footer()}
   ${barreMobile()}
   <script src="/assets/js/main.js" defer></script>
-  ${process.env.TURNSTILE_SITE_KEY ? '<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>' : ''}
 </body>
 </html>
 `;
@@ -166,7 +165,7 @@ export function footer() {
 /* ---------- barre mobile fixe ---------- */
 export function barreMobile() {
   return `<div class="barre-mobile" id="barre-mobile">
-    <a href="/contact/#devis" class="btn btn--primaire">Demander un devis</a>
+    <a href="#" data-mail class="btn btn--primaire">${svg.mail} M'écrire un mail</a>
     <a href="${site.telHref}" class="btn btn--secondaire" aria-label="Appeler Florence au ${site.tel}">${svg.tel}</a>
   </div>`;
 }
@@ -201,65 +200,39 @@ export function faqSchema(items) {
   };
 }
 
-/* ---------- formulaire de devis ---------- */
-export function formulaireDevis({ commune = '', prestation = '' } = {}) {
-  const options = prestations.map((p) => `<option value="${p.nom}"${p.nom === prestation ? ' selected' : ''}>${p.nom}</option>`).join('');
-  return `<form class="formulaire" id="devis" action="/api/devis/" method="post" novalidate>
-      <div class="formulaire__ligne">
-        <div class="champ"><label for="f-nom">Votre nom</label><input id="f-nom" name="nom" type="text" required autocomplete="name" maxlength="80"></div>
-        <div class="champ"><label for="f-commune">Votre commune</label><input id="f-commune" name="commune" type="text" required autocomplete="address-level2" maxlength="80" value="${esc(commune)}"></div>
-      </div>
-      <div class="formulaire__ligne">
-        <div class="champ"><label for="f-tel">Téléphone <small>ou e-mail, au choix</small></label><input id="f-tel" name="tel" type="tel" autocomplete="tel" maxlength="30"></div>
-        <div class="champ"><label for="f-mail">E-mail</label><input id="f-mail" name="mail" type="email" autocomplete="email" maxlength="120"></div>
-      </div>
-      <div class="champ"><label for="f-prestation">Ce dont vous avez besoin</label>
-        <select id="f-prestation" name="prestation"><option value="">Je ne sais pas encore</option>${options}</select></div>
-      <div class="champ"><label for="f-message">Quelques mots sur le lieu <small>surface, fréquence souhaitée, date, ce qui compte pour vous</small></label><textarea id="f-message" name="message" maxlength="2000"></textarea></div>
-      <div class="champ champ--piege" aria-hidden="true"><label for="f-site">Site web</label><input id="f-site" name="site" type="text" tabindex="-1" autocomplete="off"></div>
-      <input type="hidden" name="depuis" value="">
-      ${process.env.TURNSTILE_SITE_KEY ? `<div class="cf-turnstile" data-sitekey="${process.env.TURNSTILE_SITE_KEY}" data-theme="light" data-language="fr"></div>` : ''}
-      <div class="formulaire__pied">
-        <p class="petit">Réponse sous 24 h, souvent le jour même. Aucune donnée n'est conservée ailleurs que dans la messagerie de Florence.</p>
-        <button type="submit" class="btn btn--primaire">Envoyer ma demande ${svg.fleche}</button>
-      </div>
-      <p class="formulaire__retour" role="status" aria-live="polite"></p>
-    </form>`;
-}
-
-/* ---------- section devis complète (aside + formulaire) ---------- */
-export function sectionDevis({ commune = '', prestation = '', titre = 'Demander un devis', sombre = false } = {}) {
+/* ---------- section devis : étapes + carte de contact ---------- */
+export function sectionDevis({ titre = 'Demander un devis', commune = '', prestation = '' } = {}) {
   return `<section class="section" id="demande" aria-labelledby="devis-titre">
     <div class="container devis">
       <div class="devis__aside">
         <p class="sur-titre">Devis gratuit</p>
         <h2 id="devis-titre">${titre}</h2>
-        <p class="lead">Décrivez le lieu en quelques mots. Je vous rappelle, on convient d'une visite, et vous recevez un devis écrit qui ne bouge plus.</p>
+        <p class="lead">Écrivez-moi ou appelez-moi. Je vous rappelle, on convient d'une visite, et vous recevez un devis écrit qui ne bouge plus.</p>
         <ol class="devis__etapes" role="list">
           <li><strong>Vous m'écrivez ou vous m'appelez</strong>Réponse sous 24 h, souvent le jour même.</li>
           <li><strong>Je viens voir le lieu</strong>Visite gratuite, on note ensemble ce qu'il faut faire, pièce par pièce.</li>
           <li><strong>Vous recevez le devis</strong>Écrit, détaillé, sans engagement. Le prix ne change pas en cours d'intervention.</li>
         </ol>
-        <div class="devis__contact">
-          <a href="${site.telHref}">${svg.tel} ${site.tel}</a>
-          <span class="petit">${site.horaires[0][0]} ${site.horaires[0][1]}, ${site.horaires[1][0].toLowerCase()} ${site.horaires[1][1]}</span>
-        </div>
       </div>
-      ${formulaireDevis({ commune, prestation })}
+      <div class="carte-contact" id="devis">
+        <p class="carte-contact__titre">Un mail, ou un coup de fil</p>
+        <p class="petit">Dites-moi votre commune, ce dont vous avez besoin et quand vous êtes joignable. Le reste, on le voit ensemble.</p>
+        <a href="#" data-mail class="btn btn--primaire">${svg.mail} M'écrire un mail</a>
+        <a href="${site.telHref}" class="btn btn--secondaire">${svg.tel} ${site.tel}</a>
+        <p class="carte-contact__adresse petit">Adresse : <span data-mail-texte>affichée par votre navigateur</span></p>
+        <p class="petit">${site.horaires[0][0]} ${site.horaires[0][1]}, ${site.horaires[1][0].toLowerCase()} ${site.horaires[1][1]}. Aucune donnée n'est collectée par ce site.</p>
+      </div>
     </div>
   </section>`;
 }
 
 /* ---------- bandeau d'appel (bas de page intérieure) ---------- */
 export function appel({ titre = 'Un devis après visite, pas de surprise', texte = 'Décrivez votre besoin, je vous réponds sous 24 h.', commune = '', prestation = '' } = {}) {
-  const q = new URLSearchParams();
-  if (commune) q.set('commune', commune);
-  if (prestation) q.set('prestation', prestation);
-  const href = '/contact/' + (q.toString() ? '?' + q.toString() : '') + '#devis';
+  const href = '/contact/#devis';
   return `<section class="section" aria-label="Demander un devis">
     <div class="container"><div class="appel">
       <div><h2>${titre}</h2><p class="lead">${texte}</p></div>
-      <div class="appel__actions"><a href="${href}" class="btn btn--primaire">Demander un devis ${svg.fleche}</a><a href="${site.telHref}" class="btn btn--secondaire">${svg.tel} ${site.tel}</a></div>
+      <div class="appel__actions"><a href="#" data-mail class="btn btn--primaire">${svg.mail} M'écrire un mail</a><a href="${site.telHref}" class="btn btn--secondaire">${svg.tel} ${site.tel}</a></div>
     </div></div>
   </section>`;
 }

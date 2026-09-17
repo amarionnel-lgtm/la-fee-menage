@@ -29,17 +29,14 @@ for (const f of pages) {
   }
 }
 
-// Turnstile (captcha discret) n'est autorisé dans la CSP que si la clé de site est
-// configurée : sans clé, aucune ressource tierce n'est admise.
-const turnstile = !!process.env.TURNSTILE_SITE_KEY;
 const csp = [
   "default-src 'none'",
-  `script-src 'self'${hachages.size ? ' ' + [...hachages].sort().join(' ') : ''}${turnstile ? ' https://challenges.cloudflare.com' : ''}`,
+  `script-src 'self'${hachages.size ? ' ' + [...hachages].sort().join(' ') : ''}`,
   "style-src 'self'",
   "img-src 'self' data:",
   "font-src 'self'",
   "connect-src 'self'",
-  `frame-src ${turnstile ? 'https://challenges.cloudflare.com' : "'none'"}`,
+  "frame-src 'none'",
   "worker-src 'none'",
   "manifest-src 'none'",
   "media-src 'none'",
@@ -47,8 +44,7 @@ const csp = [
   "base-uri 'none'",
   "frame-ancestors 'none'",
   "object-src 'none'",
-  // Trusted Types : coupe les injections DOM ; retiré si Turnstile est présent (script tiers non garanti compatible).
-  ...(turnstile ? [] : ["require-trusted-types-for 'script'"]),
+  "require-trusted-types-for 'script'",
   'upgrade-insecure-requests',
 ].join('; ');
 
@@ -81,7 +77,6 @@ const config = {
     { source: '/assets/images/(.*)', headers: [{ key: 'Cache-Control', value: 'public, max-age=3600, must-revalidate' }] },
     // CSS et JS sans condensat dans le nom : jamais immutable (voir ERRORS.md).
     { source: '/assets/(css|js)/(.*)', headers: [{ key: 'Cache-Control', value: 'public, max-age=0, must-revalidate' }] },
-    { source: '/api/(.*)', headers: [{ key: 'Cache-Control', value: 'no-store' }, { key: 'X-Robots-Tag', value: 'noindex' }] },
   ],
   redirects: [
     { source: '/(.*)', has: [{ type: 'host', value: 'la-fee-menage.fr' }], destination: 'https://www.la-fee-menage.fr/$1', permanent: true },

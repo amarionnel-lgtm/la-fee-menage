@@ -25,7 +25,7 @@ const corps = `
 
         <h2>Données personnelles</h2>
         <p>Responsable du traitement : ${site.proprietaire}, ${site.adresse.rue}, ${site.adresse.cp} ${site.adresse.ville}.</p>
-        <p>Le formulaire de demande de devis transmet à Florence Marionnel les informations que vous y saisissez (nom, commune, téléphone ou adresse électronique, message). Elles servent uniquement à vous répondre et à établir un devis. Elles sont transmises par courrier électronique et ne sont ni revendues ni partagées. Un mécanisme anti-robots (champ caché et horodatage) est utilisé sans cookie ni traceur.</p>
+        <p>Ce site ne comporte aucun formulaire et ne collecte aucune donnée personnelle. Les seuls moyens de contact sont votre messagerie électronique et le téléphone : les informations que vous transmettez alors (nom, coordonnées, description du besoin) servent uniquement à vous répondre et à établir un devis. Elles ne sont ni revendues ni partagées.</p>
         <p>Les échanges liés à une demande sont conservés le temps de la relation commerciale et au maximum trois ans après le dernier contact.</p>
         <p>Ce site n'utilise aucun cookie publicitaire, aucun outil de mesure d'audience tiers et ne crée aucun compte utilisateur. L'hébergeur peut traiter des données techniques (adresse IP, pages consultées) à des fins de sécurité, conformément à sa politique de confidentialité.</p>
         <p>Vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité sur vos données. Pour l'exercer, écrivez à ${site.proprietaire} par courrier ou par messagerie électronique ; réponse sous un mois. Vous pouvez aussi saisir la CNIL (cnil.fr).</p>

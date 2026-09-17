@@ -93,15 +93,6 @@
     fiches.forEach((f) => f.addEventListener('click', () => allumer(f.dataset.piece)));
   }
 
-  /* Barre mobile : se cache quand le formulaire de devis est visible */
-  const barre = $('#barre-mobile');
-  const formDevis = $('#devis');
-  if (barre && formDevis && 'IntersectionObserver' in window) {
-    new IntersectionObserver((entries) => {
-      entries.forEach((e) => barre.classList.toggle('cachee', e.isIntersecting));
-    }, { threshold: 0.15 }).observe(formDevis);
-  }
-
   /* Formulaire du hero : commune vers la page contact, ou vers la page ville si elle existe */
   const villes = { melrand: '/melrand/', pontivy: '/pontivy/', lorient: '/lorient/', auray: '/auray/', vannes: '/vannes/' };
   $$('[data-commune-form]').forEach((form) => {
@@ -109,48 +100,9 @@
       const v = ($('input[name=commune]', form).value || '').trim();
       const cle = v.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
       if (villes[cle]) { e.preventDefault(); location.href = villes[cle] + '#demande'; }
-      else if (v) { e.preventDefault(); location.href = '/contact/?commune=' + encodeURIComponent(v) + '#devis'; }
+      else { e.preventDefault(); location.href = '/contact/#devis'; }
     });
   });
-
-  /* Formulaire de devis : préremplissage depuis l'adresse, horodatage, envoi */
-  if (formDevis) {
-    const q = new URLSearchParams(location.search);
-    const commune = $('input[name=commune]', formDevis);
-    const prestation = $('select[name=prestation]', formDevis);
-    if (q.get('commune') && commune && !commune.value) commune.value = q.get('commune');
-    if (q.get('prestation') && prestation) prestation.value = q.get('prestation');
-    const depuis = $('input[name=depuis]', formDevis);
-    if (depuis) depuis.value = String(Date.now());
-    const retour = $('.formulaire__retour', formDevis);
-    const bouton = $('button[type=submit]', formDevis);
-    const dire = (etat, texte) => { retour.dataset.etat = etat; retour.textContent = texte; };
-
-    formDevis.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const nom = $('input[name=nom]', formDevis).value.trim();
-      const tel = $('input[name=tel]', formDevis).value.trim();
-      const courriel = $('input[name=mail]', formDevis).value.trim();
-      if (!nom || !commune.value.trim()) return dire('erreur', 'Votre nom et votre commune suffisent pour commencer.');
-      if (!tel && !courriel) return dire('erreur', 'Indiquez un téléphone ou un e-mail pour que Florence puisse vous répondre.');
-      bouton.disabled = true;
-      try {
-        const res = await fetch(formDevis.action, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(Object.fromEntries(new FormData(formDevis))) });
-        if (res.ok) { dire('ok', 'Demande envoyée. Florence vous répond sous 24 h, souvent le jour même.'); formDevis.reset(); }
-        else if (res.status === 503) ouvrirMessagerie();
-        else { const j = await res.json().catch(() => ({})); dire('erreur', j.erreur || "L'envoi n'a pas abouti. Vous pouvez appeler le 06 41 84 36 34."); }
-      } catch { ouvrirMessagerie(); }
-      bouton.disabled = false;
-    });
-
-    // Repli si le service d'envoi n'est pas disponible : la messagerie du visiteur s'ouvre, préremplie.
-    function ouvrirMessagerie() {
-      const d = Object.fromEntries(new FormData(formDevis));
-      const corps = `Bonjour Florence,\n\nNom : ${d.nom}\nCommune : ${d.commune}\nTéléphone : ${d.tel || '-'}\nE-mail : ${d.mail || '-'}\nBesoin : ${d.prestation || 'à définir'}\n\n${d.message || ''}`;
-      location.href = 'mailto:' + mail + '?subject=' + encodeURIComponent('Demande de devis, ' + d.commune) + '&body=' + encodeURIComponent(corps);
-      dire('ok', "Votre messagerie s'ouvre avec la demande préremplie. Si ce n'est pas le cas, appelez le 06 41 84 36 34.");
-    }
-  }
 
   /* Avant / après */
   $$('.avant-apres').forEach((bloc) => {
