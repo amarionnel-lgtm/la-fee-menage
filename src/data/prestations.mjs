@@ -5,13 +5,13 @@ export const prestations = [
     slug: "menage-entretien-regulier-morbihan",
     nom: "Ménage et entretien régulier",
     court: "Chaque semaine ou tous les quinze jours, chez vous, avec les mêmes gestes à chaque passage.",
-    surTitre: "Particuliers et locations saisonnières",
+    surTitre: "Particuliers",
     h1: "Ménage et entretien régulier <em>à domicile</em> dans le Morbihan",
     titre: "Ménage régulier à domicile dans le Morbihan",
-    description: "Ménage régulier à domicile dans le Morbihan : passage hebdomadaire ou bimensuel, gîtes et locations saisonnières, produits écologiques. Devis après visite.",
+    description: "Ménage régulier à domicile dans le Morbihan : passage hebdomadaire, bimensuel ou mensuel, toujours la même personne, produits écologiques. Devis après visite.",
     intro: [
       "Le ménage régulier, c'est le cœur de mon métier. Un passage chaque semaine, tous les quinze jours ou une fois par mois, à jour fixe, avec la même personne : moi. Je viens avec mon matériel et mes produits, je suis la fiche établie ensemble lors de la première visite, et vous retrouvez votre maison propre sans y avoir pensé.",
-      "J'interviens autour de Melrand, Pontivy, Lorient, Auray et Vannes, chez les particuliers, dans les résidences secondaires et dans les gîtes et locations saisonnières entre deux séjours. Le tarif est fixé au devis, après une visite du logement, et ne bouge pas en cours d'année.",
+      "J'interviens autour de Melrand, Pontivy, Lorient, Auray et Vannes, chez les particuliers, dans les maisons habitées à l'année comme dans les résidences secondaires. Le tarif est fixé au devis, après une visite du logement, et ne bouge pas en cours d'année.",
     ],
     points: [
       ["Une seule personne, toujours la même", "Pas de rotation d'équipe : je connais votre logement et vos habitudes."],
@@ -25,14 +25,13 @@ export const prestations = [
       "Lits refaits, draps changés si le linge est préparé",
       "Poubelles vidées, entrée et escalier passés",
       "En option selon la fiche : repassage, intérieur du four et du réfrigérateur, vitres",
-      "Gîtes et locations : remise en état complète entre deux séjours, contrôle visuel avant l'arrivée",
     ],
     faq: [
       ["Comment se passe la première visite ?", "Je viens chez vous, on fait le tour du logement ensemble et on note pièce par pièce ce que vous attendez à chaque passage. Cette fiche sert de base au devis et à chaque intervention. La visite est gratuite et sans engagement."],
       ["Quelle fréquence choisir ?", "La plupart de mes clients choisissent un passage hebdomadaire ou tous les quinze jours. Un passage mensuel convient pour un logement peu occupé ou une résidence secondaire. On peut changer de rythme en cours d'année, il suffit de me prévenir."],
       ["Faut-il fournir les produits ?", "Non. Je viens avec mon aspirateur, mes microfibres et mes produits écologiques. Si vous tenez à un produit en particulier pour une surface fragile, je l'utilise volontiers."],
       ["Que se passe-t-il si je dois décaler un passage ?", "Prévenez-moi la veille au plus tard et on trouve un autre créneau dans la semaine. Pour les vacances, il suffit de me donner les dates : les passages reprennent à votre retour."],
-      ["Intervenez-vous dans les gîtes et locations saisonnières ?", "Oui, c'est une demande fréquente autour d'Auray, de Lorient et du golfe. Je nettoie après le départ des vacanciers et je prépare le logement avant l'arrivée des suivants, avec un planning établi pour toute la saison."],
+      ["Intervenez-vous dans les résidences secondaires ?", "Oui. Un passage mensuel ou un grand nettoyage avant votre arrivée et après votre départ, organisé à distance si vous n'êtes pas sur place."],
     ],
   },
   {

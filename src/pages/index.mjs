@@ -140,7 +140,7 @@ const corps = `
           <li><b>Statut</b><span>Entreprise individuelle, sans franchise ni sous-traitance.</span></li>
           <li><b>Formation</b><span>Certifiée BGE (création et gestion d'entreprise) et Certibiocides (usage professionnel des produits de désinfection).</span></li>
           <li><b>Produits</b><span>Écologiques et biodégradables, sans composé organique volatil. Aucune odeur chimique après mon passage.</span></li>
-          <li><b>Clients</b><span>Particuliers, gîtes et locations saisonnières, bureaux et commerces, syndics de copropriété, agences immobilières.</span></li>
+          <li><b>Clients</b><span>Particuliers, bureaux et commerces, syndics de copropriété, agences immobilières, propriétaires bailleurs.</span></li>
           <li><b>Devis</b><span>Toujours après une visite du lieu. Écrit, détaillé, et le prix ne change pas en cours d'intervention.</span></li>
         </ul>
       </div>
