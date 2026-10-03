@@ -7,3 +7,8 @@
 @font-face{font-family:'Quicksand';font-style:normal;font-weight:600;font-display:swap;src:url('/assets/fonts/quicksand-600.woff2') format('woff2');}
 @font-face{font-family:'Quicksand';font-style:normal;font-weight:700;font-display:swap;src:url('/assets/fonts/quicksand-700.woff2') format('woff2');}
 @font-face{font-family:'Grand Hotel';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/grandhotel-400.woff2') format('woff2');}
+
+/* Polices de secours aux mêmes proportions que les vraies : quand la police
+   définitive arrive, la mise en page ne bouge pas. */
+@font-face{font-family:'Sentient secours';src:local('Georgia'),local('Times New Roman');ascent-override:96%;descent-override:32%;line-gap-override:8%;size-adjust:103%;}
+@font-face{font-family:'Quicksand secours';src:local('Avenir Next'),local('Segoe UI'),local('Helvetica Neue');ascent-override:100%;descent-override:25%;line-gap-override:0%;size-adjust:97%;}

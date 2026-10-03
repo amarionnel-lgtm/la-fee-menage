@@ -10,13 +10,13 @@ export const prestations = [
     titre: "Ménage régulier à domicile dans le Morbihan",
     description: "Ménage régulier à domicile dans le Morbihan : passage hebdomadaire, bimensuel ou mensuel, toujours la même personne, produits écologiques. Devis après visite.",
     intro: [
-      "Le ménage régulier, c'est le cœur de mon métier. Un passage chaque semaine, tous les quinze jours ou une fois par mois, à jour fixe, avec la même personne : moi. Je viens avec mon matériel et mes produits, je suis la fiche établie ensemble lors de la première visite, et vous retrouvez votre maison propre sans y avoir pensé.",
+      "Le ménage régulier, c'est le cœur de mon métier. Un passage chaque semaine, tous les quinze jours ou une fois par mois, à jour fixe, avec la même personne : moi. Je viens avec mon matériel et mes produits, je suis la fiche établie ensemble lors de la première visite, et vous retrouvez votre maison propre en rentrant.",
       "J'interviens autour de Melrand, Pontivy, Lorient, Auray et Vannes, chez les particuliers, dans les maisons habitées à l'année comme dans les résidences secondaires. Le tarif est fixé au devis, après une visite du logement, et ne bouge pas en cours d'année.",
     ],
     points: [
-      ["Une seule personne, toujours la même", "Pas de rotation d'équipe : je connais votre logement et vos habitudes."],
+      ["Une seule personne, toujours la même", "Je connais votre logement et vos habitudes, vous retrouvez la même intervenante à chaque passage."],
       ["Une fiche par pièce", "Ce que je fais à chaque passage est écrit noir sur blanc, pièce par pièce, dès la première visite."],
-      ["Produits sains", "Uniquement des produits écologiques et biodégradables, sans odeur chimique."],
+      ["Produits sains", "Uniquement des produits écologiques et biodégradables, à l'odeur neutre."],
     ],
     inclus: [
       "Cuisine : plan de travail, plaques, évier, façades, extérieur des appareils, sol",
@@ -27,7 +27,7 @@ export const prestations = [
       "En option selon la fiche : repassage, intérieur du four et du réfrigérateur, vitres",
     ],
     faq: [
-      ["Comment se passe la première visite ?", "Je viens chez vous, on fait le tour du logement ensemble et on note pièce par pièce ce que vous attendez à chaque passage. Cette fiche sert de base au devis et à chaque intervention. La visite est gratuite et sans engagement."],
+      ["Comment se passe la première visite ?", "Je viens chez vous, on fait le tour du logement ensemble et on note pièce par pièce ce que vous attendez à chaque passage. Cette fiche sert de base au devis et à chaque intervention. La visite est gratuite et vous restez libre de donner suite."],
       ["Quelle fréquence choisir ?", "La plupart de mes clients choisissent un passage hebdomadaire ou tous les quinze jours. Un passage mensuel convient pour un logement peu occupé ou une résidence secondaire. On peut changer de rythme en cours d'année, il suffit de me prévenir."],
       ["Faut-il fournir les produits ?", "Non. Je viens avec mon aspirateur, mes microfibres et mes produits écologiques. Si vous tenez à un produit en particulier pour une surface fragile, je l'utilise volontiers."],
       ["Que se passe-t-il si je dois décaler un passage ?", "Prévenez-moi la veille au plus tard et on trouve un autre créneau dans la semaine. Pour les vacances, il suffit de me donner les dates : les passages reprennent à votre retour."],
@@ -41,15 +41,15 @@ export const prestations = [
     surTitre: "Professionnels",
     h1: "Nettoyage de <em>bureaux et commerces</em> dans le Morbihan",
     titre: "Nettoyage de bureaux et commerces, Morbihan",
-    description: "Entretien régulier ou ponctuel de bureaux, commerces et cabinets dans le Morbihan, avant ouverture ou après fermeture, sans odeur chimique. Devis gratuit.",
+    description: "Entretien régulier ou ponctuel de bureaux, commerces et cabinets dans le Morbihan, avant ouverture ou après fermeture, à l'odeur neutre. Devis gratuit.",
     intro: [
-      "Un lieu de travail propre, c'est une équipe qui travaille mieux et des clients qui se sentent attendus. J'assure l'entretien régulier ou ponctuel de bureaux, commerces, cabinets et locaux professionnels dans le Morbihan, avec des produits écologiques qui ne laissent aucune odeur chimique.",
+      "Un lieu de travail propre, c'est une équipe qui travaille mieux et des clients qui se sentent attendus. J'assure l'entretien régulier ou ponctuel de bureaux, commerces, cabinets et locaux professionnels dans le Morbihan, avec des produits écologiques qui laissent une odeur neutre.",
       "TPE, profession libérale, commerce de centre-ville ou PME en zone d'activité à Pontivy ou Lorient : je m'adapte à vos horaires. Passage avant l'ouverture, après la fermeture ou en dehors des heures d'affluence, le planning est calé sur votre activité.",
     ],
     points: [
       ["Régulier ou ponctuel", "Contrat hebdomadaire, bimensuel ou intervention à la demande."],
       ["Horaires adaptés", "Avant ouverture dès 7 h, après fermeture ou le week-end selon disponibilité."],
-      ["Sans odeur chimique", "Aucune nuisance pour vos collaborateurs et vos clients."],
+      ["Une odeur neutre", "Vos collaborateurs et vos clients retrouvent un air sain."],
     ],
     inclus: [
       "Dépoussiérage des postes de travail, meubles et cloisons",
@@ -63,8 +63,8 @@ export const prestations = [
     faq: [
       ["Proposez-vous des contrats d'entretien régulier ?", "Oui. Hebdomadaire, bimensuel ou mensuel selon vos besoins et votre budget. Un contrat annuel fixe le tarif et le planning pour toute l'année."],
       ["Intervenez-vous en dehors des heures de bureau ?", "Oui, c'est même le cas le plus fréquent. Passage avant ouverture dès 7 h, après fermeture ou le week-end selon disponibilité. Le planning est établi avec vous lors du devis."],
-      ["Quels types de locaux nettoyez-vous ?", "TPE et PME, professions libérales (médecins, kinésithérapeutes, avocats, experts-comptables), commerces, salons, restaurants, espaces partagés. Si votre cas n'est pas dans la liste, parlons-en."],
-      ["Vos produits conviennent-ils aux surfaces de bureau ?", "Oui. Ils sont formulés pour être efficaces sans abîmer : écrans, claviers, surfaces laquées, parquets, carrelage. Sans solvant ni abrasif, sans résidu ni odeur persistante."],
+      ["Quels types de locaux nettoyez-vous ?", "TPE et PME, professions libérales (médecins, kinésithérapeutes, avocats, experts-comptables), commerces, salons, restaurants, espaces partagés. Si votre cas sort de cette liste, parlons-en."],
+      ["Vos produits conviennent-ils aux surfaces de bureau ?", "Oui. Ils sont formulés pour nettoyer en respectant la surface : écrans, claviers, surfaces laquées, parquets, carrelage. Ils agissent par tensioactifs doux et s'évacuent au rinçage, en laissant une odeur neutre."],
     ],
   },
   {
@@ -77,7 +77,7 @@ export const prestations = [
     description: "Entretien des parties communes d'immeubles dans le Morbihan : halls, escaliers, locaux poubelles, vitres. Calendrier fixé avec le syndic. Devis gratuit.",
     intro: [
       "Un hall propre et un escalier entretenu, c'est la première chose que voient les habitants et les visiteurs d'un immeuble. J'assure l'entretien des parties communes de petites et moyennes copropriétés dans le Morbihan, à un rythme fixé avec le syndic, le conseil syndical ou le bailleur.",
-      "Le passage suit toujours la même fiche : halls, escaliers, paliers, portes vitrées, locaux poubelles, avec la sortie et la rentrée des conteneurs si vous le souhaitez. Vous recevez un tarif annuel et un calendrier, sans surprise.",
+      "Le passage suit toujours la même fiche : halls, escaliers, paliers, portes vitrées, locaux poubelles, avec la sortie et la rentrée des conteneurs si vous le souhaitez. Vous recevez un tarif annuel et un calendrier, établis à l'avance.",
     ],
     points: [
       ["Un calendrier fixe", "Passage hebdomadaire ou bimensuel, jours convenus, tarif annuel."],
@@ -103,17 +103,17 @@ export const prestations = [
   {
     slug: "nettoyage-vitres-morbihan",
     nom: "Nettoyage de vitres",
-    court: "Fenêtres, baies, vérandas et vitrines, sans trace, même en plein soleil.",
+    court: "Fenêtres, baies, vérandas et vitrines, nettes jusqu'aux bords, même en plein soleil.",
     surTitre: "Particuliers et professionnels",
     h1: "Nettoyage de <em>vitres</em> dans le Morbihan",
     titre: "Nettoyage de vitres dans le Morbihan",
-    description: "Nettoyage de vitres, baies, vérandas et vitrines dans le Morbihan. Raclette sans trace, intérieur et extérieur, contrats réguliers possibles. Devis gratuit.",
+    description: "Nettoyage de vitres, baies, vérandas et vitrines dans le Morbihan. Raclette professionnelle, intérieur et extérieur, contrats réguliers. Devis gratuit.",
     intro: [
-      "Des vitres sans trace ni auréole, même par grand soleil : c'est une question de méthode. Mouilleur, raclette, microfibre sur les bords. J'interviens chez les particuliers comme chez les commerçants, pour les fenêtres, les baies vitrées, les vérandas et les vitrines.",
+      "Des vitres nettes jusqu'aux bords, même par grand soleil : c'est une question de méthode. Mouilleur, raclette, microfibre sur les bords. J'interviens chez les particuliers comme chez les commerçants, pour les fenêtres, les baies vitrées, les vérandas et les vitrines.",
       "Intérieur et extérieur, châssis et rails compris. Pour les vitres accessibles depuis le sol ou depuis l'intérieur, une perche suffit ; pour les hauteurs qui demandent un échafaudage ou une nacelle, on s'organise en amont.",
     ],
     points: [
-      ["Sans trace", "Technique professionnelle à la raclette, bords séchés à la microfibre."],
+      ["Nettes jusqu'aux bords", "Technique professionnelle à la raclette, bords séchés à la microfibre."],
       ["Intérieur et extérieur", "Châssis, rails de baies et joints nettoyés en même temps."],
       ["Régulier possible", "Contrat mensuel ou trimestriel pour les vitrines et les vérandas."],
     ],
@@ -127,7 +127,7 @@ export const prestations = [
       "Vitrines de commerce, portes d'entrée vitrées",
     ],
     faq: [
-      ["Comment évitez-vous les traces ?", "Le produit est appliqué au mouilleur puis retiré à la raclette, sans laisser sécher. Les bords sont essuyés à la microfibre. C'est cette méthode qui donne un résultat net, même en plein soleil."],
+      ["Comment évitez-vous les traces ?", "Le produit est appliqué au mouilleur puis retiré à la raclette tant qu'il est humide. Les bords sont essuyés à la microfibre. C'est cette méthode qui donne un résultat net, même en plein soleil."],
       ["Nettoyez-vous les vitres en hauteur ?", "J'interviens sur les vitres accessibles depuis l'intérieur ou depuis le sol avec une perche. Pour les vitres qui demandent un échafaudage ou une nacelle, on s'organise avant, précisez-le dans votre demande."],
       ["À quelle fréquence faire nettoyer ses vitres ?", "Deux à quatre fois par an pour une maison, davantage pour une vitrine exposée à la rue. Je propose des contrats mensuels ou trimestriels aux professionnels et aux particuliers qui veulent ne plus y penser."],
       ["Intervenez-vous pour les commerces ?", "Oui : vitrines, portes vitrées, cloisons de bureaux, vérandas de restaurants. Le passage se fait avant l'ouverture pour ne pas gêner votre activité."],
@@ -140,20 +140,20 @@ export const prestations = [
     surTitre: "Extérieurs",
     h1: "Terrasses, <em>extérieurs</em> et espaces verts dans le Morbihan",
     titre: "Nettoyage de terrasses et extérieurs, Morbihan",
-    description: "Démoussage de terrasses bois, pierre ou composite, abords et petits espaces verts dans le Morbihan. Produits sans danger pour plantes et animaux.",
+    description: "Démoussage de terrasses bois, pierre ou composite, abords et petits espaces verts dans le Morbihan. Produits inoffensifs pour les plantes et les animaux.",
     intro: [
       "La terrasse est la première victime de l'humidité bretonne : mousses, lichens, traces noires, taches de graisse. Je redonne son aspect à votre espace extérieur avec un nettoyage adapté à chaque surface, pierre, bois, composite ou dallage, et une pression réglée pour ne rien abîmer.",
-      "J'entretiens aussi les abords : allées, bordures, mobilier de jardin, petits espaces verts (tonte, désherbage des jointures, feuilles ramassées). Les produits sont biodégradables et sans risque pour vos plantes et vos animaux une fois la surface rincée.",
+      "J'entretiens aussi les abords : allées, bordures, mobilier de jardin, petits espaces verts (tonte, désherbage des jointures, feuilles ramassées). Les produits sont biodégradables, et vos plantes comme vos animaux les supportent une fois la surface rincée.",
     ],
     points: [
-      ["Pression adaptée", "Réglée selon le revêtement : le bois n'est pas traité comme le granit."],
-      ["Sans danger", "Produits biodégradables, sans risque pour les plantes, les animaux et le sol."],
+      ["Pression adaptée", "Réglée selon le revêtement : le bois demande une pression douce, le granit l'encaisse."],
+      ["Inoffensifs", "Produits biodégradables, que vos plantes, vos animaux et le sol supportent."],
       ["Abords compris", "Allées, bordures, mobilier, petit entretien des espaces verts."],
     ],
     inclus: [
       "Démoussage : mousses, algues et lichens traités",
       "Dallage et béton : carrelage extérieur, béton balayé, ardoise",
-      "Terrasse bois : nettoyage sans soulever la fibre, traitement adapté",
+      "Terrasse bois : nettoyage qui préserve la fibre, traitement adapté",
       "Terrasse composite : nettoyage doux qui préserve la surface",
       "Pierre naturelle : granit, schiste, travertin, produits compatibles",
       "Joints, bordures et allées : désherbage et nettoyage",
@@ -162,7 +162,7 @@ export const prestations = [
     faq: [
       ["La pression n'abîme-t-elle pas une terrasse en bois ?", "Le bois demande une pression modérée et un angle adapté pour ne pas soulever les fibres. Je règle la pression selon le revêtement et j'utilise des produits prévus pour le bois extérieur."],
       ["Faut-il attendre avant de remettre le mobilier ?", "Oui, un séchage de deux à quatre heures selon la météo et l'exposition. Je vous indique le délai à la fin de l'intervention."],
-      ["Les produits sont-ils sans danger pour mon chien et mes plantes ?", "Oui. Ils sont biodégradables et, une fois la terrasse rincée et sèche, sans risque pour les animaux et la végétation."],
+      ["Les produits sont-ils inoffensifs pour mon chien et mes plantes ?", "Oui. Ils sont biodégradables et, une fois la terrasse rincée et sèche, vos animaux et votre végétation les supportent."],
       ["À quelle fréquence nettoyer une terrasse en Bretagne ?", "Un nettoyage par an, au printemps de préférence, pour en profiter tout l'été. Un traitement préventif prolonge l'effet entre deux passages."],
     ],
   },
@@ -214,7 +214,7 @@ export const prestations = [
     points: [
       ["Sous 48 h", "Intervention calée sur la réception des travaux."],
       ["Particuliers et artisans", "Maison, appartement, local commercial ou tertiaire."],
-      ["Sans résidu", "Produits qui n'abîment pas les surfaces neuves et ne laissent rien."],
+      ["Surfaces neuves respectées", "Des produits qui s'évacuent entièrement au rinçage."],
     ],
     inclus: [
       "Aspiration et lavage des sols : carrelage, parquet, béton ciré",
@@ -228,30 +228,30 @@ export const prestations = [
     faq: [
       ["À quelle étape prévoir le nettoyage ?", "Après la réception des travaux, une fois tous les corps de métier partis et les finitions terminées. Prévenez-moi dès que vous connaissez la date de réception pour caler l'intervention."],
       ["Quels chantiers prenez-vous ?", "Petits et moyens chantiers : rénovation de maison ou d'appartement, aménagement de bureaux, commerces, cabinets médicaux, extensions. Pour un immeuble ou un lotissement, je vous réponds au cas par cas."],
-      ["Combien de temps dure un nettoyage de fin de chantier ?", "Une journée pour un appartement de 50 à 80 m², un jour et demi à deux jours pour une maison de 100 à 150 m². La durée dépend de l'état laissé par les artisans et des matériaux."],
-      ["Vos produits abîment-ils les surfaces neuves ?", "Non. Sans solvant ni abrasif, ils conviennent au parquet verni, au carrelage lustré et à la peinture récente, sans altérer la couleur ni la brillance."],
+      ["Combien de temps dure un nettoyage de fin de chantier ?", "Une journée pour un appartement de 50 à 80 m², un jour et demi à deux jours pour une maison de 100 à 150 m². La durée dépend de l'état laissé par les artisans et des matériaux posés."],
+      ["Vos produits abîment-ils les surfaces neuves ?", "Non. Formulés avec des tensioactifs doux, ils conviennent au parquet verni, au carrelage lustré et à la peinture récente, et préservent la couleur comme la brillance."],
     ],
   },
   {
     slug: "nettoyage-syndrome-diogene-morbihan",
     nom: "Nettoyage extrême et syndrome de Diogène",
-    court: "Logements insalubres et accumulation : une remise en état discrète, sans jugement.",
+    court: "Logements insalubres et accumulation : une remise en état discrète et respectueuse.",
     surTitre: "Intervention spécialisée",
     h1: "Nettoyage extrême et <em>syndrome de Diogène</em> dans le Morbihan",
     titre: "Nettoyage extrême et Diogène, Morbihan",
-    description: "Remise en état de logements insalubres et syndrome de Diogène dans le Morbihan. Intervention discrète, sans véhicule siglé si besoin, visite gratuite.",
+    description: "Remise en état de logements insalubres et syndrome de Diogène dans le Morbihan. Intervention discrète, véhicule neutre si besoin, visite gratuite.",
     discret: true,
     intro: [
       "Le syndrome de Diogène est une réalité difficile pour les familles qui la découvrent, souvent lors d'une hospitalisation ou d'un décès. Le logement demande alors une intervention rapide, professionnelle et, avant tout, humaine. Je suis là pour ça.",
-      "J'interviens dans tout le Morbihan avec une approche sans jugement, une discrétion totale et des produits écologiques. Chaque mission est traitée avec le soin qu'elle mérite, quelle que soit l'ampleur de la situation.",
+      "J'interviens dans tout le Morbihan avec respect, une discrétion totale et des produits écologiques. Chaque mission est traitée avec le soin qu'elle mérite, quelle que soit l'ampleur de la situation.",
     ],
     points: [
-      ["Intervention confidentielle", "Déplacement sans véhicule siglé possible. Aucune information communiquée à des tiers."],
+      ["Intervention confidentielle", "Déplacement en véhicule neutre possible. Ce qui se dit entre nous y reste."],
       ["Visite préalable gratuite", "J'évalue la situation sur place et je propose un tarif adapté avant toute intervention."],
-      ["Produits sains", "Désinfection complète sans produit chimique agressif, pour les futurs occupants."],
+      ["Produits sains", "Désinfection complète avec des produits doux, pour les futurs occupants."],
     ],
     etapes: [
-      ["Prise de contact et évaluation", "Je me rends sur place gratuitement pour évaluer l'état du logement, estimer le volume de travail et vous proposer un devis détaillé. Aucun engagement de votre côté."],
+      ["Prise de contact et évaluation", "Je me rends sur place gratuitement pour évaluer l'état du logement, estimer le volume de travail et vous proposer un devis détaillé. Vous restez libre de donner suite."],
       ["Déblayage respectueux", "Tri des affaires personnelles, évacuation des encombrants et des déchets. Tout ce qui peut être conservé l'est ; les objets à valeur sentimentale sont mis de côté et signalés à la famille."],
       ["Nettoyage en profondeur", "Désinfection des surfaces, traitement des odeurs, nettoyage des sanitaires, de la cuisine, des sols et des murs, avec des produits écologiques et biodégradables."],
       ["Remise en état et rapport", "Vérification complète avec vous, photos avant et après si vous le souhaitez, compte rendu transmissible aux travailleurs sociaux ou au tuteur si nécessaire."],
@@ -268,8 +268,8 @@ export const prestations = [
     faq: [
       ["Qu'est-ce que le syndrome de Diogène ?", "Un trouble du comportement marqué par l'accumulation excessive d'objets, la négligence de l'hygiène du logement et le refus de l'aide extérieure. Il touche le plus souvent des personnes de plus de 60 ans, après un deuil ou une longue période d'isolement. Les proches découvrent souvent la situation lors d'une hospitalisation ou d'un décès."],
       ["Combien de temps dure une intervention ?", "Un à deux jours pour un studio ou un appartement modérément atteint, trois à cinq jours pour un logement très dégradé, parfois plus. La visite préalable gratuite permet de vous donner une estimation précise avant tout engagement."],
-      ["Intervenez-vous de manière discrète ?", "Oui. Déplacement sans véhicule siglé si vous le préférez, horaires choisis ensemble pour limiter la visibilité, aucune information transmise à des tiers sans votre accord."],
-      ["Quels produits utilisez-vous ?", "Des produits écologiques et biodégradables, sans composé organique volatil ni solvant agressif, efficaces pour la désinfection et sans risque pour les personnes qui réoccuperont le logement."],
+      ["Intervenez-vous de manière discrète ?", "Oui. Déplacement en véhicule neutre si vous le préférez, horaires choisis ensemble pour limiter la visibilité, et ce qui se dit entre nous y reste, sauf accord de votre part."],
+      ["Quels produits utilisez-vous ?", "Des produits écologiques et biodégradables, à zéro composé organique volatil, efficaces pour la désinfection et sûrs pour les personnes qui réoccuperont le logement."],
       ["Travaillez-vous avec les services sociaux et les tuteurs ?", "Oui. Je peux échanger avec l'assistante sociale, le tuteur ou le curateur, et fournir un compte rendu d'intervention à la fin du chantier."],
     ],
   },

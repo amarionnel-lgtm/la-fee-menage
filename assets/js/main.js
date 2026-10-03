@@ -48,11 +48,7 @@
   /* Adresse mail recomposée (jamais en clair dans le HTML) */
   const parts = ['lafeemenage6', 'gmail.com'];
   const mail = parts.join('@');
-  $$('[data-mail]').forEach((a) => {
-    a.href = 'mailto:' + mail;
-    if (a.dataset.mailLabel !== undefined && !a.dataset.mailLabel) a.textContent = mail;
-  });
-  $$('[data-mail-texte]').forEach((el) => { el.textContent = mail; });
+  $$('[data-mail]').forEach((a) => { a.href = 'mailto:' + mail; });
 
   /* Année du pied de page */
   $$('[data-annee]').forEach((el) => { el.textContent = String(new Date().getFullYear()); });

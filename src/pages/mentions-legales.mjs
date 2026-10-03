@@ -1,5 +1,5 @@
 import { site } from '../site.mjs';
-import { layout, ariane } from '../partials.mjs';
+import { layout, ariane, adresseAffichee } from '../partials.mjs';
 
 const fil = [['Accueil', '/'], ['Mentions légales', '/mentions-legales/']];
 const corps = `
@@ -11,7 +11,7 @@ const corps = `
         <p>Conformément aux articles 6-III et 19 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique et au règlement général sur la protection des données (RGPD, règlement UE 2016/679).</p>
 
         <h2>Éditeur du site</h2>
-        <p>${site.nom}, entreprise individuelle exploitée par ${site.proprietaire}<br>${site.adresse.rue}, ${site.adresse.cp} ${site.adresse.ville}, ${site.adresse.dep}, France<br>SIRET ${site.siret}<br>Téléphone : ${site.tel}<br>Adresse électronique : <span data-mail-texte>affichée par votre navigateur</span></p>
+        <p>${site.nom}, entreprise individuelle exploitée par ${site.proprietaire}<br>${site.adresse.rue}, ${site.adresse.cp} ${site.adresse.ville}, ${site.adresse.dep}, France<br>SIRET ${site.siret}<br>Téléphone : ${site.tel}<br>Adresse électronique : ${adresseAffichee()}</p>
         <p>Directrice de la publication : ${site.proprietaire}.</p>
 
         <h2>Hébergement</h2>
@@ -25,7 +25,7 @@ const corps = `
 
         <h2>Données personnelles</h2>
         <p>Responsable du traitement : ${site.proprietaire}, ${site.adresse.rue}, ${site.adresse.cp} ${site.adresse.ville}.</p>
-        <p>Ce site ne comporte aucun formulaire et ne collecte aucune donnée personnelle. Les seuls moyens de contact sont votre messagerie électronique et le téléphone : les informations que vous transmettez alors (nom, coordonnées, description du besoin) servent uniquement à vous répondre et à établir un devis. Elles ne sont ni revendues ni partagées.</p>
+        <p>Ce site ne collecte ni ne stocke aucune donnée personnelle. Le champ « votre commune » de la page d'accueil sert uniquement à vous amener sur la page correspondante de ce site. Les seuls moyens de contact sont votre messagerie électronique et le téléphone : les informations que vous transmettez alors (nom, coordonnées, description du besoin) servent uniquement à vous répondre et à établir un devis. Elles ne sont ni revendues ni partagées.</p>
         <p>Les échanges liés à une demande sont conservés le temps de la relation commerciale et au maximum trois ans après le dernier contact.</p>
         <p>Ce site n'utilise aucun cookie publicitaire, aucun outil de mesure d'audience tiers et ne crée aucun compte utilisateur. L'hébergeur peut traiter des données techniques (adresse IP, pages consultées) à des fins de sécurité, conformément à sa politique de confidentialité.</p>
         <p>Vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité sur vos données. Pour l'exercer, écrivez à ${site.proprietaire} par courrier ou par messagerie électronique ; réponse sous un mois. Vous pouvez aussi saisir la CNIL (cnil.fr).</p>

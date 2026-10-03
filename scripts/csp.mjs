@@ -72,11 +72,13 @@ const config = {
   headers: [
     { source: '/(.*)', headers: securite },
     // Les polices ne changent jamais sous le même nom : cache long.
-    { source: '/assets/fonts/(.*)', headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }] },
+    // Seuls les fichiers de police eux-mêmes sont figés un an : leur contenu ne change jamais.
+    { source: '/assets/fonts/(.*).woff2', headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }] },
     // Images au nom stable : jamais immutable, sinon une photo remplacée reste l'ancienne chez les visiteurs.
     { source: '/assets/images/(.*)', headers: [{ key: 'Cache-Control', value: 'public, max-age=3600, must-revalidate' }] },
     // CSS et JS sans condensat dans le nom : jamais immutable (voir ERRORS.md).
     { source: '/assets/(css|js)/(.*)', headers: [{ key: 'Cache-Control', value: 'public, max-age=0, must-revalidate' }] },
+    { source: '/assets/fonts/fonts.css', headers: [{ key: 'Cache-Control', value: 'public, max-age=0, must-revalidate' }] },
   ],
   redirects: [
     { source: '/(.*)', has: [{ type: 'host', value: 'la-fee-menage.fr' }], destination: 'https://www.la-fee-menage.fr/$1', permanent: true },

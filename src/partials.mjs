@@ -4,6 +4,12 @@ import { prestations } from './data/prestations.mjs';
 export const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 export const sansBalises = (s) => String(s).replace(/<[^>]+>/g, '');
 
+/* Adresse affichée en deux morceaux, l'arobase est ajoutée par le CSS : elle est donc
+   lisible sans JavaScript, elle ne provoque aucun décalage au chargement, et elle
+   n'apparaît jamais en clair dans le HTML (robots de collecte). */
+export const adresseAffichee = () =>
+  `<span class="courriel"><span>${site.mailParts[0]}</span><span>${site.mailParts[1]}</span></span>`;
+
 /* ---------- liens contextuels en pleine phrase ---------- */
 const motsPrestations = [
   [/\bménage régulier\b|\bentretien régulier\b/i, 'menage-entretien-regulier-morbihan'],
@@ -34,7 +40,7 @@ export const lierPrestations = (html, exclure) => lier(html, motsPrestations, '/
 export const lierCommunes = (html, exclure) => lier(html, motsCommunes, '/', exclure);
 
 /* ---------- gabarit de page ---------- */
-export function layout({ path, titre, description, corps, schema = [], classe = '', noindex = false, ogImage = site.ogImage }) {
+export function layout({ path, titre, description, corps, schema = [], classe = '', noindex = false, ogImage = site.ogImage, preloadImage = null }) {
   const url = site.url + path;
   const ld = schema.length
     ? `<script type="application/ld+json">${JSON.stringify(schema.length === 1 ? schema[0] : { '@context': 'https://schema.org', '@graph': schema })}</script>`
@@ -61,7 +67,9 @@ export function layout({ path, titre, description, corps, schema = [], classe = 
   <meta property="og:site_name" content="${site.nom}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#F3E1E6">
+  ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.src}" imagesrcset="${preloadImage.srcset}" imagesizes="${preloadImage.sizes}" fetchpriority="high">` : ''}
   <link rel="preload" href="/assets/fonts/sentient-500.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/sentient-500-italic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/quicksand-500.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/fonts/fonts.css">
   <link rel="stylesheet" href="/assets/css/main.css">
@@ -149,7 +157,7 @@ export function footer() {
         <address>${site.nom}, ${site.proprietaire}<br>${site.adresse.rue}<br>${site.adresse.cp} ${site.adresse.ville}</address>
         <ul role="list">
           <li><a href="${site.telHref}">${site.tel}</a></li>
-          <li><a href="#" data-mail data-mail-label="Écrire un mail">Écrire un mail</a></li>
+          <li><a href="#" data-mail>Écrire un mail</a></li>
           <li><a href="/contact/#devis">Demander un devis</a></li>
         </ul>
       </div>
@@ -211,7 +219,7 @@ export function sectionDevis({ titre = 'Demander un devis', commune = '', presta
         <ol class="devis__etapes" role="list">
           <li><strong>Vous m'écrivez ou vous m'appelez</strong>Réponse sous 24 h, souvent le jour même.</li>
           <li><strong>Je viens voir le lieu</strong>Visite gratuite, on note ensemble ce qu'il faut faire, pièce par pièce.</li>
-          <li><strong>Vous recevez le devis</strong>Écrit, détaillé, sans engagement. Le prix ne change pas en cours d'intervention.</li>
+          <li><strong>Vous recevez le devis</strong>Écrit et détaillé. Vous restez libre de donner suite, et le prix tient jusqu'à la fin du chantier.</li>
         </ol>
       </div>
       <div class="carte-contact" id="devis">
@@ -219,15 +227,15 @@ export function sectionDevis({ titre = 'Demander un devis', commune = '', presta
         <p class="petit">Dites-moi votre commune, ce dont vous avez besoin et quand vous êtes joignable. Le reste, on le voit ensemble.</p>
         <a href="#" data-mail class="btn btn--primaire">${svg.mail} M'écrire un mail</a>
         <a href="${site.telHref}" class="btn btn--secondaire">${svg.tel} ${site.tel}</a>
-        <p class="carte-contact__adresse petit">Adresse : <span data-mail-texte>affichée par votre navigateur</span></p>
-        <p class="petit">${site.horaires[0][0]} ${site.horaires[0][1]}, ${site.horaires[1][0].toLowerCase()} ${site.horaires[1][1]}. Aucune donnée n'est collectée par ce site.</p>
+        <p class="carte-contact__adresse petit">Adresse : ${adresseAffichee()}</p>
+        <p class="petit">${site.horaires[0][0]} ${site.horaires[0][1]}, ${site.horaires[1][0].toLowerCase()} ${site.horaires[1][1]}. Vos coordonnées restent dans votre messagerie et dans la mienne.</p>
       </div>
     </div>
   </section>`;
 }
 
 /* ---------- bandeau d'appel (bas de page intérieure) ---------- */
-export function appel({ titre = 'Un devis après visite, pas de surprise', texte = 'Décrivez votre besoin, je vous réponds sous 24 h.', commune = '', prestation = '' } = {}) {
+export function appel({ titre = 'Un devis après visite, un prix qui tient', texte = 'Décrivez votre besoin, je vous réponds sous 24 h.', commune = '', prestation = '' } = {}) {
   const href = '/contact/#devis';
   return `<section class="section" aria-label="Demander un devis">
     <div class="container"><div class="appel">

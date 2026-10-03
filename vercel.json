@@ -56,7 +56,7 @@
       ]
     },
     {
-      "source": "/assets/fonts/(.*)",
+      "source": "/assets/fonts/(.*).woff2",
       "headers": [
         {
           "key": "Cache-Control",
@@ -75,6 +75,15 @@
     },
     {
       "source": "/assets/(css|js)/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/assets/fonts/fonts.css",
       "headers": [
         {
           "key": "Cache-Control",

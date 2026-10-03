@@ -33,8 +33,8 @@
   --c-text-inverse-2:#E9B7C9;   /* 6,7:1 sur prune foncé */
 
   /* Typographie */
-  --f-titre:  'Sentient', Georgia, 'Times New Roman', serif;
-  --f-corps:  'Quicksand', 'Avenir Next', 'Segoe UI', sans-serif;
+  --f-titre:  'Sentient', 'Sentient secours', Georgia, 'Times New Roman', serif;
+  --f-corps:  'Quicksand', 'Quicksand secours', 'Avenir Next', 'Segoe UI', sans-serif;
   --f-marque: 'Grand Hotel', 'Sentient', cursive;
 
   --t-xs:   0.8125rem;
@@ -637,7 +637,10 @@ body.menu-ouvert { overflow: hidden; }
 
 /* === ANIMATIONS D'ENTRÉE =================================== */
 
+.courriel > span + span::before { content: "@"; }
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity var(--t-slow), transform var(--t-slow); }
+/* Sans JavaScript, rien ne viendrait révéler ces blocs : ils restent donc visibles. */
+@media (scripting: none) { .reveal { opacity: 1; transform: none; } }
 .reveal.visible { opacity: 1; transform: none; }
 .reveal--2 { transition-delay: 100ms; }
 .reveal--3 { transition-delay: 200ms; }

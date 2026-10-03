@@ -44,16 +44,19 @@ const corps = `
           <ul class="hero__faits" role="list">
             <li>${svg.etoile} <strong>${site.note} / 5</strong> sur Google</li>
             <li>${svg.bouclier} <strong>Certifiée BGE</strong> et Certibiocides</li>
-            <li>${svg.feuille} <strong>Produits écologiques</strong>, sans odeur chimique</li>
+            <li>${svg.feuille} <strong>Produits écologiques</strong>, à l'odeur neutre</li>
           </ul>
         </div>
         <div class="hero__visuel reveal">
           <div class="hero__tache" aria-hidden="true"></div>
-          <img class="hero__fee" src="/assets/images/fee-magenta-480.png" srcset="/assets/images/fee-magenta-240.png 240w, /assets/images/fee-magenta-480.png 480w" sizes="(max-width: 599px) 34vw, (max-width: 899px) 160px, 240px" alt="" width="480" height="611" aria-hidden="true">
+          <picture>
+            <source srcset="/assets/images/fee-magenta-240.webp 240w, /assets/images/fee-magenta-360.webp 360w, /assets/images/fee-magenta-480.webp 480w" sizes="(max-width: 599px) 34vw, (max-width: 899px) 160px, 240px" type="image/webp">
+            <img class="hero__fee" src="/assets/images/fee-magenta-480.png" srcset="/assets/images/fee-magenta-240.png 240w, /assets/images/fee-magenta-480.png 480w" sizes="(max-width: 599px) 34vw, (max-width: 899px) 160px, 240px" alt="" width="480" height="611" aria-hidden="true" loading="lazy" decoding="async">
+          </picture>
           <div class="hero__photo">
             <picture>
-              <source srcset="/assets/images/florence-marionnel-900.webp 900w, /assets/images/florence-marionnel.webp 1532w" sizes="(max-width: 899px) 100vw, 45vw" type="image/webp">
-              <img src="/assets/images/florence-marionnel-900.jpg" srcset="/assets/images/florence-marionnel-900.jpg 900w, /assets/images/florence-marionnel.jpg 1532w" sizes="(max-width: 899px) 100vw, 45vw" alt="Florence Marionnel devant sa camionnette La Fée Ménage" width="1532" height="1532" fetchpriority="high" decoding="async">
+              <source srcset="/assets/images/florence-marionnel-600.webp 600w, /assets/images/florence-marionnel-900.webp 900w, /assets/images/florence-marionnel.webp 1532w" sizes="(max-width: 899px) 100vw, 45vw" type="image/webp">
+              <img src="/assets/images/florence-marionnel-900.jpg" srcset="/assets/images/florence-marionnel-600.jpg 600w, /assets/images/florence-marionnel-900.jpg 900w, /assets/images/florence-marionnel.jpg 1532w" sizes="(max-width: 899px) 100vw, 45vw" alt="Florence Marionnel devant sa camionnette La Fée Ménage" width="1532" height="1532" fetchpriority="high" decoding="async">
             </picture>
           </div>
           <div class="hero__etiquette" aria-hidden="true"><span class="etoiles">★★★★★</span><strong>${site.note}</strong>${site.nbAvis} avis Google</div>
@@ -93,7 +96,7 @@ const corps = `
           <div>
             <p class="sur-titre">${principale.surTitre}</p>
             <h3>${principale.nom}</h3>
-            <p>${principale.court} Vous choisissez le rythme, je viens à jour fixe avec mon matériel et mes produits, et le tarif ne bouge pas de l'année.</p>
+            <p>${principale.court} Vous choisissez le rythme, je viens à jour fixe avec mon matériel et mes produits, et le tarif tient toute l'année.</p>
             <a href="/services/${principale.slug}/" class="btn btn--primaire">Le ménage régulier ${svg.fleche}</a>
           </div>
           <img src="/assets/images/panier.png" alt="" width="516" height="480" loading="lazy">
@@ -110,8 +113,8 @@ const corps = `
         <div class="discret">
           <div>
             <p class="sur-titre">Situations difficiles</p>
-            <h2 id="discret-titre">Logement insalubre, syndrome de Diogène : j'interviens sans jugement</h2>
-            <p>Souvent découverte lors d'une hospitalisation ou d'un décès, la situation demande une intervention rapide et, avant tout, humaine. Visite gratuite, déplacement sans véhicule siglé si vous le souhaitez, aucune information transmise à des tiers.</p>
+            <h2 id="discret-titre">Logement insalubre, syndrome de Diogène : j'interviens avec respect</h2>
+            <p>Souvent découverte lors d'une hospitalisation ou d'un décès, la situation demande une intervention rapide et, avant tout, humaine. Visite gratuite, véhicule neutre si vous le souhaitez, et ce qui se dit entre nous y reste.</p>
             <div class="discret__actions">
               <a href="/services/nettoyage-syndrome-diogene-morbihan/" class="btn btn--clair">Comment ça se passe ${svg.fleche}</a>
               <a href="/contact/?prestation=Nettoyage+extr%C3%AAme+et+syndrome+de+Diog%C3%A8ne#devis" class="btn btn--fantome">Me contacter discrètement</a>
@@ -119,7 +122,7 @@ const corps = `
           </div>
           <ul class="discret__engagements" role="list">
             <li><strong>Visite préalable gratuite</strong>J'évalue sur place et je propose un tarif avant toute intervention.</li>
-            <li><strong>Objets personnels mis de côté</strong>Papiers, photos, souvenirs : signalés à la famille, jamais jetés sans accord.</li>
+            <li><strong>Objets personnels mis de côté</strong>Papiers, photos, souvenirs : mis de côté et signalés à la famille, qui décide de leur sort.</li>
             <li><strong>Compte rendu si besoin</strong>Transmissible au tuteur, au curateur ou à l'assistante sociale.</li>
           </ul>
         </div>
@@ -137,9 +140,9 @@ const corps = `
           <p class="florence__lien"><a href="/a-propos/" class="lien-fleche">Faire connaissance ${svg.fleche}</a></p>
         </div>
         <ul class="florence__faits reveal reveal--2" role="list">
-          <li><b>Statut</b><span>Entreprise individuelle, sans franchise ni sous-traitance.</span></li>
+          <li><b>Statut</b><span>Entreprise individuelle. Florence Marionnel exerce elle-même, du premier appel au dernier coup de chiffon.</span></li>
           <li><b>Formation</b><span>Certifiée BGE (création et gestion d'entreprise) et Certibiocides (usage professionnel des produits de désinfection).</span></li>
-          <li><b>Produits</b><span>Écologiques et biodégradables, sans composé organique volatil. Aucune odeur chimique après mon passage.</span></li>
+          <li><b>Produits</b><span>Écologiques et biodégradables, à zéro composé organique volatil. Après mon passage, ça sent le propre.</span></li>
           <li><b>Clients</b><span>Particuliers, bureaux et commerces, syndics de copropriété, agences immobilières, propriétaires bailleurs.</span></li>
           <li><b>Devis</b><span>Toujours après une visite du lieu. Écrit, détaillé, et le prix ne change pas en cours d'intervention.</span></li>
         </ul>
@@ -160,7 +163,7 @@ const corps = `
               ${communes.map((c) => `<li><a href="/${c.slug}/"><strong>${c.nom}</strong><span class="temps">${c.temps === 'siège' ? 'le point de départ' : c.temps + ' de route'}</span>${svg.fleche}</a></li>`).join('')}
               <li><a href="/morbihan/"><strong>Une autre commune</strong><span class="temps">tout le département</span>${svg.fleche}</a></li>
             </ul>
-            <p class="zones__note">Temps de route indicatifs depuis Melrand, en voiture et hors trafic. Pas de frais de déplacement pour Melrand et les communes limitrophes ; au-delà, le déplacement est indiqué sur le devis.</p>
+            <p class="zones__note">Temps de route indicatifs depuis Melrand, en voiture et hors trafic. Le déplacement est compris pour Melrand et les communes limitrophes ; au-delà, il figure sur le devis.</p>
           </div>
         </div>
       </div>
@@ -184,7 +187,7 @@ const corps = `
       </div>
     </section>
 
-    ${sectionDevis({ titre: 'Un devis après visite, pas de surprise' })}
+    ${sectionDevis({ titre: 'Un devis après visite, un prix qui tient' })}
 `;
 
 export default {
@@ -194,6 +197,11 @@ export default {
     titre: 'La Fée Ménage, entreprise de nettoyage dans le Morbihan',
     description: 'Ménage régulier, bureaux, copropriétés, vitres, fin de chantier et nettoyage extrême dans le Morbihan. Florence Marionnel intervient elle-même. Devis gratuit.',
     corps,
+    preloadImage: {
+      src: '/assets/images/florence-marionnel-900.webp',
+      srcset: '/assets/images/florence-marionnel-600.webp 600w, /assets/images/florence-marionnel-900.webp 900w, /assets/images/florence-marionnel.webp 1532w',
+      sizes: '(max-width: 899px) 100vw, 45vw',
+    },
     schema: [entrepriseSchema({ description: 'Entreprise de nettoyage dans le Morbihan : ménage régulier à domicile, bureaux et commerces, copropriétés, vitres, terrasses, remise en état, fin de chantier, nettoyage extrême et syndrome de Diogène.' })],
   }),
 };
